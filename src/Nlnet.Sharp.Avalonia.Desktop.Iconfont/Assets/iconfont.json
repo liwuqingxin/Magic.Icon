@@ -1,0 +1,177 @@
+{
+  "id": "4489927",
+  "name": "Avalonia.DevTools.Color",
+  "font_family": "Devtools.Color",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "40957578",
+      "name": "Day",
+      "font_class": "Day",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "40957579",
+      "name": "IsFocusable",
+      "font_class": "IsFocusable",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "40957580",
+      "name": "FolderOpen",
+      "font_class": "FolderOpen",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "40957581",
+      "name": "IsFocused",
+      "font_class": "IsFocused",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "40957582",
+      "name": "IsPinned",
+      "font_class": "IsPinned",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "40957583",
+      "name": "IsClipToBounds",
+      "font_class": "IsClipToBounds",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "40957584",
+      "name": "Hand",
+      "font_class": "Hand",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "40957585",
+      "name": "IsEnabled",
+      "font_class": "IsEnabled",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "40957586",
+      "name": "DayOrNight",
+      "font_class": "DayOrNight",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "40957587",
+      "name": "CaseSensitive",
+      "font_class": "CaseSensitive",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "40957588",
+      "name": "IsFocusedWithIn",
+      "font_class": "IsFocusedWithIn",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "40957589",
+      "name": "Regex",
+      "font_class": "Regex",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "40957590",
+      "name": "IsStop",
+      "font_class": "IsStop",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "40957591",
+      "name": "IsTabStop",
+      "font_class": "IsTabStop",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "40957592",
+      "name": "Sink",
+      "font_class": "Sink",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "40957594",
+      "name": "Night",
+      "font_class": "Night",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "40957595",
+      "name": "WholeWord",
+      "font_class": "WholeWord",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "40957596",
+      "name": "IsSelected",
+      "font_class": "IsSelected",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "40957597",
+      "name": "IsDropDownOpen",
+      "font_class": "IsDropDownOpen",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "40957598",
+      "name": "IsVisible",
+      "font_class": "IsVisible",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "40957599",
+      "name": "Node",
+      "font_class": "Node",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "40957600",
+      "name": "TriangleRuler",
+      "font_class": "TriangleRuler",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "40957601",
+      "name": "IsOpen",
+      "font_class": "IsOpen",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "40957602",
+      "name": "Scop",
+      "font_class": "Scop",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    }
+  ]
+}

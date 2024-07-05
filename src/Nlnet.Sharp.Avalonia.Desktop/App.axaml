@@ -1,0 +1,14 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Nlnet.Sharp.App"
+             RequestedThemeVariant="Default">
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+
+    <Application.Resources>
+        <FontFamily x:Key="ColorfulIcon">avares://Nlnet.Sharp.Avalonia.Desktop.Iconfont/Assets/iconfont.ttf#Devtools.Color</FontFamily>
+    </Application.Resources>
+
+</Application>

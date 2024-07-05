@@ -1,0 +1,19 @@
+﻿<Project>
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+
+		<GenerateIconClass Condition="'$(GenerateIconClass)' == ''">true</GenerateIconClass>
+		<GenerateIconMarkup Condition="'$(GenerateIconMarkup)' == ''">true</GenerateIconMarkup>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!--Obsolete-->
+		<CompilerVisibleProperty Include="GenerateIconClass" />
+		<CompilerVisibleProperty Include="GenerateIconMarkup" />
+
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconClass" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconMarkup" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
+    </ItemGroup>
+</Project>

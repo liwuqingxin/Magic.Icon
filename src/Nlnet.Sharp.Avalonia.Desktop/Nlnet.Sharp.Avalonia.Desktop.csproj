@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+	<Import Project="$(MSBuildThisFileDirectory)..\Build\Common.props" />
+	<Import Project="$(MSBuildThisFileDirectory)..\Build\Output.App.props" />
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersionThatSampleUsed)" />
+		<PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersionThatSampleUsed)" />
+		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersionThatSampleUsed)" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersionThatSampleUsed)" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersionThatSampleUsed)" />		
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersionThatSampleUsed)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Nlnet.Sharp.Avalonia.Desktop.Iconfont\Nlnet.Sharp.Avalonia.Desktop.Iconfont.csproj" />
+	</ItemGroup>
+
+</Project>

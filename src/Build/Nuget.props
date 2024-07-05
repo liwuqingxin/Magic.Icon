@@ -1,0 +1,28 @@
+<Project>
+	<PropertyGroup>
+
+		<!--Nuget-->
+		<Title>Nlnet sharp</Title>
+		<Description>A iconfont generator for avalonia and wpf.</Description>
+		<PackageTags>icon;iconfont;avalonia;wpf;</PackageTags>
+		<ProjectUrl>https://github.com/liwuqingxin/Iconfont.Generator</ProjectUrl>
+		<RepositoryUrl>https://github.com/liwuqingxin/Iconfont.Generator</RepositoryUrl>
+		
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>$(NugetPackageVersion)</Version>
+		<Author>nlnet</Author>
+		<Authors>$(Author)</Authors>
+		<PackageProjectUrl>$(ProjectUrl)</PackageProjectUrl>
+		<Copyright></Copyright>
+		<PackageIcon>logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)..\..\nuget\logo.png" Visible="False" Pack="True" PackagePath="\"/>
+		<None Include="$(MSBuildThisFileDirectory)..\..\nuget\LICENSE" Visible="False" Pack="True" PackagePath="\"/>
+		<None Include="$(MSBuildThisFileDirectory)..\..\nuget\README.md" Visible="False" Pack="True" PackagePath="\"/>
+	</ItemGroup>
+</Project>

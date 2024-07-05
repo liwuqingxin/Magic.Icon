@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+# Nlnet
+build/3.Nuget.bat
+src/.idea/
