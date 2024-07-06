@@ -8,7 +8,6 @@
 		<LangVersion>latest</LangVersion>
 		<TrimMode>copyused</TrimMode>
 		<BuiltInComInteropSupport>false</BuiltInComInteropSupport>
-		<RootNamespace>Nlnet.Sharp</RootNamespace>
 
 		<!-- 'bin/ref/' https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/compiler-options/output#producereferenceassembly -->
 		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>

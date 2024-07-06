@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
 
-namespace Nlnet.Sharp.Iconfont.Generator
+namespace Nlnet.Sharp
 {
     internal class IconJson
     {

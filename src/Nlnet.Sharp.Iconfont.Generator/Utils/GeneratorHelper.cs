@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Nlnet.Sharp.Iconfont.Generator
+namespace Nlnet.Sharp
 {
     internal static class GeneratorHelper
     {

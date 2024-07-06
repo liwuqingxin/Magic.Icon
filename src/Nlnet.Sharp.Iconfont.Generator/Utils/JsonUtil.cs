@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Nlnet.Sharp.Iconfont.Generator
+namespace Nlnet.Sharp
 {
     internal static class JsonUtil
     {

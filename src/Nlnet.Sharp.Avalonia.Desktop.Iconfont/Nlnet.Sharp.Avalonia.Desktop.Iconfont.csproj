@@ -17,7 +17,8 @@
 		                 IconMarkup="Icon"
 		                 IconClass="Icons" 
 		                 IconNamespace="Nlnet.Sharp" 
-		                 UseDefaultXmlnsPrefix="true"/>
+		                 UseDefaultXmlnsPrefix="true"
+		                 InjectFallbackFont="true"/>
 	</ItemGroup>
 
 	<ItemGroup>

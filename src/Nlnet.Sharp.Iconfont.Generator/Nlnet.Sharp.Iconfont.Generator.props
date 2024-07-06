@@ -15,5 +15,6 @@
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconMarkup" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="InjectFallbackFont" />
     </ItemGroup>
 </Project>

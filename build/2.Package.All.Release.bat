@@ -4,6 +4,6 @@ rd/s/q ..\_output\
 
 cd ..\src\
 
-dotnet msbuild .\Nlnet.Sharp.sln /p:Configuration=Release
+dotnet msbuild .\Nlnet.Sharp.Iconfont.Generator.sln /p:Configuration=Release
 
 pause

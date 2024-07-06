@@ -1,8 +1,8 @@
-﻿using Microsoft.CodeAnalysis;
-using System;
+﻿using System;
 using System.Diagnostics;
+using Microsoft.CodeAnalysis;
 
-namespace Nlnet.Sharp.Iconfont.Generator
+namespace Nlnet.Sharp
 {
     internal static class GeneratorContextExtensions
     {
@@ -73,7 +73,8 @@ namespace Nlnet.Sharp.Iconfont.Generator
             Trace.WriteLine($"+++++++++++++++++++++++++++++ ");
             foreach (var option in context.AnalyzerConfigOptions.GlobalOptions.Keys)
             {
-                Trace.WriteLine($"+++++++++++ {option}");
+                context.AnalyzerConfigOptions.GlobalOptions.TryGetValue(option, out var value);
+                Trace.WriteLine($"+++++++++++ {option} = {value}");
             }
         }
 

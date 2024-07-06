@@ -6,7 +6,7 @@
 		<AvaloniaVersionThatLibrariesUsed>11.0.0</AvaloniaVersionThatLibrariesUsed>
 		<LibVersion>1.0.1</LibVersion>
 		<NugetPackageVersion>$(LibVersion)</NugetPackageVersion>
-		<!--<NugetPackageVersion>$(LibVersion)-local.37</NugetPackageVersion>-->
+		<NugetPackageVersion>$(LibVersion)-local.55</NugetPackageVersion>
 		<FileVersion>$([System.DateTime]::Now.ToString("yyyy.MM.dd.HHmm"))</FileVersion>
 		<AssemblyVersion>$(LibVersion)</AssemblyVersion>
 

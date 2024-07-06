@@ -10,6 +10,8 @@
 	<!--Saving source generator output in source control (this post)-->
 	<!--https://andrewlock.net/creating-a-source-generator-part-6-saving-source-generator-output-in-source-control/-->
 
+	<Import Project="$(MSBuildThisFileDirectory)\..\Build\Nuget.props" />
+
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<Nullable>disable</Nullable>
@@ -45,6 +47,12 @@
 
 		<!-- Package the props file -->
 		<None Include="Nlnet.Sharp.Iconfont.Generator.props" Pack="true" PackagePath="build" Visible="true" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="Nlnet.Sharp.AssemblyVersionAttribute">
+			<_Parameter1>$(NugetPackageVersion)</_Parameter1>
+		</AssemblyAttribute>
 	</ItemGroup>
 
 </Project>
