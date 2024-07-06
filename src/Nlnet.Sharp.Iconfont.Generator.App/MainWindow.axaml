@@ -4,22 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nlnet="https://www.nlnet.net"
-        Title="Nlnet.Sharp.Avalonia"
-        d:DesignHeight="450"
-        d:DesignWidth="800"
+        xmlns:sharp="clr-namespace:Nlnet.Sharp"
+        Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
+        Width="600"
+        Height="400"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
     <Window.Styles>
         <Style Selector="TextBlock">
             <Setter Property="FontSize" Value="48" />
         </Style>
     </Window.Styles>
-    <StackPanel Orientation="Horizontal" Spacing="10">
-        <TextBlock Text="{x:Static nlnet:Icons.Hand}" />
-        <TextBlock Text="{Icon IsOpen}" />
-        <TextBlock Text="{Icon CaseSensitive}" />
-        <TextBlock Text="{Icon Day}" />
-        <TextBlock Text="{Icon DayOrNight}" />
-        <TextBlock Text="{Icon IsClipToBounds}" />
-        <TextBlock Text="{Icon IsDropDownOpen}" />
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Spacing="20">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal"
+                    Spacing="10">
+            <TextBlock Text="{x:Static nlnet:IconChars.Hand}" />
+            <TextBlock Text="{Icon IsOpen}" />
+            <TextBlock Text="{Icon CaseSensitive}" />
+            <TextBlock Text="{Icon Day}" />
+            <TextBlock Text="{Icon DayOrNight}" />
+            <TextBlock Text="{Icon IsClipToBounds}" />
+            <TextBlock Text="{Icon IsDropDownOpen}" />
+        </StackPanel>
+
+        <Button Height="32"
+                HorizontalAlignment="Center"
+                Click="Button_OnClick"
+                Content="Show Icon Viewer" />
     </StackPanel>
+
 </Window>

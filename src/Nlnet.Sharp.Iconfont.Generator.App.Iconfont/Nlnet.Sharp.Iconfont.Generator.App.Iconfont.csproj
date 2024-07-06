@@ -14,8 +14,7 @@
 
 	<ItemGroup>
 		<AdditionalFiles Include="Assets\iconfont.json"
-		                 IconMarkup="Icon"
-		                 IconClass="Icons" 
+		                 IconName="Icon"
 		                 IconNamespace="Nlnet.Sharp" 
 		                 UseDefaultXmlnsPrefix="true"
 		                 InjectFallbackFont="true"/>

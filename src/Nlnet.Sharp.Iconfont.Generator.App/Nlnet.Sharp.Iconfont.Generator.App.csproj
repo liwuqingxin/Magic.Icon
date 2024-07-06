@@ -22,4 +22,10 @@
 		<ProjectReference Include="..\Nlnet.Sharp.Iconfont.Generator.App.Iconfont\Nlnet.Sharp.Iconfont.Generator.App.Iconfont.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<AssemblyAttribute Include="Nlnet.Sharp.AssemblyVersionAttribute">
+			<_Parameter1>$(NugetPackageVersion)</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
 </Project>

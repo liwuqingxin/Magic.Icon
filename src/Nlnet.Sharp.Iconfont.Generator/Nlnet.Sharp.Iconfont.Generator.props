@@ -11,8 +11,7 @@
 		<CompilerVisibleProperty Include="GenerateIconClass" />
 		<CompilerVisibleProperty Include="GenerateIconMarkup" />
 
-		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconClass" />
-		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconMarkup" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconName" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="InjectFallbackFont" />
