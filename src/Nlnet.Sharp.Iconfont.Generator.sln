@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Avalonia.Desktop", "Nlnet.Sharp.Avalonia.Desktop\Nlnet.Sharp.Avalonia.Desktop.csproj", "{FAAAE23A-ED83-4147-A9A2-40D23788D790}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{D9664454-47AC-4331-96CE-4BC83552013C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{1E6C1FBE-9B68-4321-9FF3-43C1AFBF646F}"
@@ -25,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{43A9E1DD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator", "Nlnet.Sharp.Iconfont.Generator\Nlnet.Sharp.Iconfont.Generator.csproj", "{886D1989-BD28-4F2B-B26E-15FC263C8D28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Avalonia.Desktop.Iconfont", "Nlnet.Sharp.Avalonia.Desktop.Iconfont\Nlnet.Sharp.Avalonia.Desktop.Iconfont.csproj", "{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator.App", "Nlnet.Sharp.Iconfont.Generator.App\Nlnet.Sharp.Iconfont.Generator.App.csproj", "{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator.App.Iconfont", "Nlnet.Sharp.Iconfont.Generator.App.Iconfont\Nlnet.Sharp.Iconfont.Generator.App.Iconfont.csproj", "{5D980026-BF46-439C-84DD-89CCCAF07A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,26 +33,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FAAAE23A-ED83-4147-A9A2-40D23788D790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAAAE23A-ED83-4147-A9A2-40D23788D790}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAAAE23A-ED83-4147-A9A2-40D23788D790}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAAAE23A-ED83-4147-A9A2-40D23788D790}.Release|Any CPU.Build.0 = Release|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FAAAE23A-ED83-4147-A9A2-40D23788D790} = {D9664454-47AC-4331-96CE-4BC83552013C}
 		{43A9E1DD-8565-435A-8212-AAD9FCA8FDF4} = {1E6C1FBE-9B68-4321-9FF3-43C1AFBF646F}
-		{D471F35B-A8BB-4A60-9A4D-431FFBCB4B01} = {D9664454-47AC-4331-96CE-4BC83552013C}
+		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682} = {D9664454-47AC-4331-96CE-4BC83552013C}
+		{5D980026-BF46-439C-84DD-89CCCAF07A76} = {D9664454-47AC-4331-96CE-4BC83552013C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F92A6194-7E11-4780-A383-90788A785624}

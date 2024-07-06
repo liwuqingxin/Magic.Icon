@@ -10,7 +10,6 @@
         mc:Ignorable="d">
     <Window.Styles>
         <Style Selector="TextBlock">
-            <Setter Property="FontFamily" Value="{DynamicResource ColorfulIcon}" />
             <Setter Property="FontSize" Value="48" />
         </Style>
     </Window.Styles>

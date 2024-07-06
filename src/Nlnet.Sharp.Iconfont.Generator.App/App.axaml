@@ -7,8 +7,4 @@
         <FluentTheme />
     </Application.Styles>
 
-    <Application.Resources>
-        <FontFamily x:Key="ColorfulIcon">avares://Nlnet.Sharp.Avalonia.Desktop.Iconfont/Assets/iconfont.ttf#Devtools.Color</FontFamily>
-    </Application.Resources>
-
 </Application>

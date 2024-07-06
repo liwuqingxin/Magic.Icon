@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Nlnet.Sharp.Avalonia.Desktop.Iconfont\Nlnet.Sharp.Avalonia.Desktop.Iconfont.csproj" />
+		<ProjectReference Include="..\Nlnet.Sharp.Iconfont.Generator.App.Iconfont\Nlnet.Sharp.Iconfont.Generator.App.Iconfont.csproj" />
 	</ItemGroup>
 
 </Project>
