@@ -10,19 +10,40 @@
         Height="400"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
-    <Window.Styles>
-        <Style Selector="TextBlock">
-            <Setter Property="FontSize" Value="48" />
-        </Style>
-    </Window.Styles>
     <StackPanel HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Spacing="20">
+        <StackPanel Spacing="10">
+            <TextBlock Text="{Binding Source={x:Static IconInfo.Id}, StringFormat='Id:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static IconInfo.Name}, StringFormat='Name:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static IconInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static IconInfo.Description}, StringFormat='Description:   {0}'}" />
+        </StackPanel>
+
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Orientation="Horizontal"
                     Spacing="10">
+            <StackPanel.Styles>
+                <Style Selector="TextBlock">
+                    <Setter Property="FontSize" Value="48" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Transitions">
+                        <Transitions>
+                            <TransformOperationsTransition Easing="0.5,0.8,0.5,0.8"
+                                                           Property="RenderTransform"
+                                                           Duration="0:0:0.3" />
+                        </Transitions>
+                    </Setter>
+                    <Style Selector="^:pointerover">
+                        <Setter Property="RenderTransform" Value="scale(1.4,1.4)" />
+                        <Setter Property="ZIndex" Value="100" />
+                    </Style>
+                </Style>
+            </StackPanel.Styles>
             <TextBlock Text="{x:Static nlnet:IconChars.Hand}" />
+            <TextBlock Text="{x:Static nlnet:IconChars.Night}" />
             <TextBlock Text="{Icon IsOpen}" />
             <TextBlock Text="{Icon CaseSensitive}" />
             <TextBlock Text="{Icon Day}" />

@@ -18,6 +18,7 @@ namespace Nlnet.Sharp
         private static readonly string Nl = Environment.NewLine;
 
 
+
         private static class MsBuildProperties
         {
             public const string IconName = nameof(IconName);
@@ -71,6 +72,8 @@ namespace Nlnet.Sharp
 
             public string JsonFileNameAndId => $"{JsonFileName}.{IconJson.id}";
         }
+
+
 
         public void Initialize(GeneratorInitializationContext context)
         {
@@ -137,6 +140,7 @@ namespace Nlnet.Sharp
                         BuildFallbackFontInjector(ctx);
                     }
 
+                    BuildInformation(ctx);
                     BuildClass(ctx);
                     BuildMarkup(ctx);
                 }
@@ -150,6 +154,35 @@ namespace Nlnet.Sharp
                     description: "Please file an issue if you think it is a bug.",
                     helpLinkUri: "https://www.devtools.nlnet.net");
             }
+        }
+
+        private static void BuildInformation(IconfontContext ctx)
+        {
+            var entityName = ctx.Name.AsName();
+            var infoName = $"{entityName}Info";
+
+            Build(ctx, infoName, builder =>
+            {
+                AppendInfoHeader(builder, ctx);
+
+                builder.AppendLine($"using System;");
+                builder.AppendLine();
+                builder.AppendLine($"namespace {ctx.Namespace};");
+                builder.AppendLine();
+                builder.AppendLine($@"
+public static class {infoName} {{
+    public const string Id = ""{ctx.IconJson.id}"";
+    
+    public const string Name = ""{ctx.IconJson.name}"";
+
+    public const string FontFamily = ""{ctx.IconJson.font_family}"";
+
+    public const string Description = ""{ctx.IconJson.description}"";
+
+    public const int Count = {ctx.IconJson.glyphs.Count};
+}}
+");
+            });
         }
 
         private static void BuildFallbackFontInjector(IconfontContext ctx)
