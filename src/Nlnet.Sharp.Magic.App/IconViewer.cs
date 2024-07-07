@@ -13,6 +13,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Transformation;
 using Avalonia.Styling;
+using Nlnet.Sharp.IconA;
 
 namespace Nlnet.Sharp;
 
@@ -29,9 +30,9 @@ public class IconViewer : Window
         Iconfonts = new List<Iconfont>()
         {
             new("id", "description", "name", "fontFamily",
-                ColorIconExtension.Values.Select(v => new IconItem("", v.Key.ToString(), v.Value)).ToList()),
+                IconAExtension.Values.Select(v => new IconItem("", v.Key.ToString(), v.Value)).ToList()),
             new("id", "description", "name", "fontFamily",
-                IconExtension.Values.Select(v => new IconItem("", v.Key.ToString(), v.Value)).ToList()),
+                IconBExtension.Values.Select(v => new IconItem("", v.Key.ToString(), v.Value)).ToList()),
         };
 
         this.Content = CreateIconfontTabControl();

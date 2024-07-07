@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Magic.App", "Nl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Magic.App.Iconfont", "Nlnet.Sharp.Magic.App.Iconfont\Nlnet.Sharp.Magic.App.Iconfont.csproj", "{05C577F4-9193-474E-8F5F-7CCBFC86932E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Magic.Icon", "Nlnet.Sharp.Magic.Icon\Nlnet.Sharp.Magic.Icon.csproj", "{DB70EC3A-8E20-4F28-9B16-6CD3133EA886}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB70EC3A-8E20-4F28-9B16-6CD3133EA886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB70EC3A-8E20-4F28-9B16-6CD3133EA886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB70EC3A-8E20-4F28-9B16-6CD3133EA886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB70EC3A-8E20-4F28-9B16-6CD3133EA886}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

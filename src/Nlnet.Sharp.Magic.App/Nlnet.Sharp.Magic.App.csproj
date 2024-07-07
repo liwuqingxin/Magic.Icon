@@ -16,11 +16,12 @@
 		<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersionThatSampleUsed)" />
 		<PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersionThatSampleUsed)" />		
 		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersionThatSampleUsed)" />		
-		<PackageReference Include="Nlnet.Avalonia.DevTools" Version="1.0.1-beta.21" />
+		<!--<PackageReference Include="Nlnet.Avalonia.DevTools" Version="1.0.1-beta.21" />-->
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Nlnet.Sharp.Magic.App.Iconfont\Nlnet.Sharp.Magic.App.Iconfont.csproj" />
+		<ProjectReference Include="..\Nlnet.Sharp.Magic.Icon\Nlnet.Sharp.Magic.Icon.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

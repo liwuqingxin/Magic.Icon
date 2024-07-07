@@ -5,71 +5,152 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nlnet="https://www.nlnet.net"
         xmlns:sharp="clr-namespace:Nlnet.Sharp"
+        xmlns:iconA="clr-namespace:Nlnet.Sharp.IconA;assembly=Nlnet.Sharp.Magic.App.Iconfont"
         Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
-        Width="600"
-        Height="400"
+        Width="800"
+        Height="500"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
-    <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Spacing="20">
-        <StackPanel Spacing="10">
-            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Id}, StringFormat='Id:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Name}, StringFormat='Name:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Count}, StringFormat='Count:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Description}, StringFormat='Description:   {0}'}" />
-        </StackPanel>
 
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style Selector="IconBlock">
+            <Setter Property="FontSize" Value="48" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Easing="0.5,0.8,0.5,0.8"
+                                                   Property="RenderTransform"
+                                                   Duration="0:0:0.2" />
+                </Transitions>
+            </Setter>
+            <Style Selector="^:pointerover">
+                <Setter Property="RenderTransform" Value="scale(1.4,1.4)" />
+                <Setter Property="ZIndex" Value="100" />
+            </Style>
+        </Style>
+    </Window.Styles>
 
-        <StackPanel HorizontalAlignment="Center">
-            <StackPanel.Styles>
-                <Style Selector="TextBlock">
-                    <Setter Property="FontSize" Value="48" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="HorizontalAlignment" Value="Center" />
-                    <Setter Property="Transitions">
-                        <Transitions>
-                            <TransformOperationsTransition Easing="0.5,0.8,0.5,0.8"
-                                                           Property="RenderTransform"
-                                                           Duration="0:0:0.2" />
-                        </Transitions>
-                    </Setter>
-                    <Style Selector="^:pointerover">
-                        <Setter Property="RenderTransform" Value="scale(1.4,1.4)" />
-                        <Setter Property="ZIndex" Value="100" />
-                    </Style>
-                </Style>
-            </StackPanel.Styles>
+    <TabControl Padding="30" TabStripPlacement="Left">
+        <TabItem Header="About">
+            <TextBlock TextWrapping="Wrap">
+                <Run>We provide a magic ability to generate icon classes from iconfont.json which comes from</Run>
+                <Run Foreground="Blue">https://www.iconfont.cn/</Run>
+                .<LineBreak />
+                <LineBreak />
+                <Run>You can use it in avalonia (and wpf in later versions), in kinds of approaches.</Run>
+            </TextBlock>
+        </TabItem>
 
-            <!-- If the iconfont is built with MSBuild property InjectFallbackFont, FontFamily property can be saved. -->
-            <StackPanel Orientation="Horizontal" Spacing="10">
-                <TextBlock Text="{x:Static nlnet:ColorIconChars.Hand}" />
-                <TextBlock Text="{ColorIcon IsOpen}" />
-                <TextBlock Text="{ColorIcon CaseSensitive}" />
-                <TextBlock Text="{ColorIcon Day}" />
-                <TextBlock Text="{ColorIcon DayOrNight}" />
-                <TextBlock Text="{ColorIcon IsClipToBounds}" />
-                <TextBlock Text="{ColorIcon IsDropDownOpen}" />
+        <TabItem Header="First of all">
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap">
+                    <Run>1. You need two files, like</Run>
+                    <Run Foreground="Blue">*.json</Run>
+                    and<Run Foreground="Blue">*.ttf</Run>
+                    .<LineBreak />
+                    <LineBreak />
+                    <Run>2. Add the package 'Nlnet.Sharp.Iconfont.Generator' from Nuget.</Run>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run>3. Standalone project for iconfont resources.</Run>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run>4. Add the *.json as AdditionalFiles and give it a 'IconName' property.</Run>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run>That's all. Just build it.</Run>
+                </TextBlock>
             </StackPanel>
+        </TabItem>
 
-            <!-- Please note that only one iconfont can be built with InjectFallbackFont. -->
-            <StackPanel Orientation="Horizontal" Spacing="10">
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{x:Static nlnet:IconChars.Property}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{ColorIcon IsDropDownOpen}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsStop}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsTabStop}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon AlignStretchHorizontal}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon Regex}" />
-                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsFocused}" />
+        <TabItem Header="Build-Info">
+            <ScrollViewer>
+				<StackPanel Spacing="3">
+					<TextBlock Text="IconA"/>
+					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Id}, StringFormat='Id:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Name}, StringFormat='Name:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Count}, StringFormat='Count:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Description}, StringFormat='Description:   {0}'}" />
+
+					<TextBlock Text=" " />
+
+					<TextBlock Text="IconB"/>
+					<TextBlock Text="{Binding Source={x:Static IconBInfo.Id}, StringFormat='Id:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconBInfo.Name}, StringFormat='Name:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconBInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconBInfo.Count}, StringFormat='Count:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconBInfo.Description}, StringFormat='Description:   {0}'}" />
+
+					<TextBlock Text=" " />
+
+					<TextBlock Text="IconC"/>
+					<TextBlock Text="{Binding Source={x:Static IconCInfo.Id}, StringFormat='Id:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconCInfo.Name}, StringFormat='Name:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconCInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconCInfo.Count}, StringFormat='Count:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconCInfo.Description}, StringFormat='Description:   {0}'}" />
+
+					<TextBlock Text=" " />
+
+					<TextBlock Text="IconD"/>
+					<TextBlock Text="{Binding Source={x:Static IconDInfo.Id}, StringFormat='Id:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconDInfo.Name}, StringFormat='Name:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconDInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconDInfo.Count}, StringFormat='Count:   {0}'}" />
+					<TextBlock Text="{Binding Source={x:Static IconDInfo.Description}, StringFormat='Description:   {0}'}" />
+				</StackPanel>
+			</ScrollViewer>
+		</TabItem>
+
+        <TabItem Header="Using Chars">
+            <StackPanel Spacing="20">
+                <TextBlock Text="Without FontFamily being set." />
+                <IconBlock Text="{x:Static iconA:IconAChars.Night}" />
+
+                <TextBlock Text="With FontFamily being set from resources." />
+                <IconBlock FontFamily="{DynamicResource IconAFamily}" Text="{x:Static iconA:IconAChars.Hand}" />
+
+                <TextBlock Text="With FontFamily being set by SharpIconFamily." />
+                <IconBlock FontFamily="{SharpIconFamily IconA}" Text="{x:Static iconA:IconAChars.Day}" />
             </StackPanel>
-        </StackPanel>
+        </TabItem>
 
+        <TabItem Header="Using Markup">
+            <StackPanel Spacing="20">
+                <TextBlock Text="With IconA markup extension." />
+                <IconBlock FontFamily="{SharpIconFamily IconA}" Text="{iconA:IconA IsPinned}" />
+            </StackPanel>
+        </TabItem>
 
-        <Button Height="32"
-                HorizontalAlignment="Center"
-                Click="Button_OnClick"
-                Content="Show Icon Viewer" />
-    </StackPanel>
+        <TabItem Header="Save Xmlns">
+            <StackPanel Spacing="20">
+                <TextBlock Text="Save the xmlns by setting property 'UseDefaultXmlnsPrefix' to true." />
+                <IconBlock FontFamily="{SharpIconFamily IconB}" Text="{IconB AlignTop}" />
+            </StackPanel>
+        </TabItem>
 
+        <TabItem Header="Save FontFamily">
+            <StackPanel Spacing="20">
+                <TextBlock Text="Save the FontFamily by setting property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set" />
+                <IconBlock FontFamily="{SharpIconFamily IconD}" Text="{IconD 芝士蛋糕}" />
+
+                <!-- If the iconfont is built with MSBuild property InjectFallbackFont, FontFamily property can be saved. -->
+                <!-- Please note that only one iconfont can be built with InjectFallbackFont. -->
+                <TextBlock Text="With IconC markup extension. IconC is built with 'InjectFallbackFont'." />
+                <IconBlock Text="{IconC GitHub}" />
+            </StackPanel>
+        </TabItem>
+
+        <TabItem Header="Icon Viewer">
+            <Button Height="32"
+                    HorizontalAlignment="Center"
+                    Click="Button_OnClick"
+                    Content="Show Icon Viewer" />
+        </TabItem>
+    </TabControl>
 </Window>

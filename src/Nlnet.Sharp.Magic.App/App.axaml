@@ -7,4 +7,8 @@
         <FluentTheme />
     </Application.Styles>
 
+    <Application.Resources>
+        <FontFamily x:Key="IconAFamily">avares://Nlnet.Sharp.Magic.App.Iconfont/Assets/icon_a.ttf#Devtools.Color</FontFamily>
+    </Application.Resources>
+
 </Application>

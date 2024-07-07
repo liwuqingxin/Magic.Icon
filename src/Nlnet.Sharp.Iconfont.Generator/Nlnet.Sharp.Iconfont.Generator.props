@@ -10,10 +10,12 @@
 		<!--Obsolete-->
 		<CompilerVisibleProperty Include="GenerateIconClass" />
 		<CompilerVisibleProperty Include="GenerateIconMarkup" />
+		<CompilerVisibleProperty Include="FontNamespace" />
 
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconName" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />
-		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoFontFamily" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="InjectFallbackFont" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
     </ItemGroup>
 </Project>

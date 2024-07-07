@@ -22,13 +22,17 @@ namespace Nlnet.Sharp
 
         private static class MsBuildProperties
         {
+            public const string FontNamespace = nameof(FontNamespace);
+
             public const string IconName = nameof(IconName);
 
             public const string IconNamespace = nameof(IconNamespace);
 
-            public const string UseDefaultXmlnsPrefix = nameof(UseDefaultXmlnsPrefix);
+            public const string AutoFontFamily = nameof(AutoFontFamily);
 
             public const string InjectFallbackFont = nameof(InjectFallbackFont);
+
+            public const string UseDefaultXmlnsPrefix = nameof(UseDefaultXmlnsPrefix);
         }
 
         private class IconfontContext
@@ -39,7 +43,8 @@ namespace Nlnet.Sharp
                 IconJson iconJson, 
                 string name, 
                 string ns, 
-                bool injectFallbackFont, 
+                bool autoFontFamily,
+                bool injectFallbackFont,
                 bool useDefaultXmlnsPrefix)
             {
                 Context = context;
@@ -47,6 +52,7 @@ namespace Nlnet.Sharp
                 IconJson = iconJson;
                 Name = name;
                 Namespace = ns;
+                AutoFontFamily = autoFontFamily;
                 InjectFallbackFont = injectFallbackFont;
                 UseDefaultXmlnsPrefix = useDefaultXmlnsPrefix;
             }
@@ -61,11 +67,13 @@ namespace Nlnet.Sharp
 
             public string Namespace { get; }
 
+            public bool AutoFontFamily { get; }
+
             public bool InjectFallbackFont { get; }
 
             public bool UseDefaultXmlnsPrefix { get; }
 
-            public string JsonFileName => Path.GetFileNameWithoutExtension(File.Path);
+            private string JsonFileName => Path.GetFileNameWithoutExtension(File.Path);
 
             public string FallbackFontInjectorName => $"FallbackFontInjectorFor_{JsonFileNameAndId.AsName()}";
 
@@ -125,6 +133,7 @@ namespace Nlnet.Sharp
                     }
 
                     // Options
+                    var autoFontFamily = context.GetBoolProperty(file, MsBuildProperties.AutoFontFamily);
                     var injectFallbackFont = context.GetBoolProperty(file, MsBuildProperties.InjectFallbackFont);
                     var useDefaultXmlnsPrefix = context.GetBoolProperty(file, MsBuildProperties.UseDefaultXmlnsPrefix);
 
@@ -139,7 +148,7 @@ namespace Nlnet.Sharp
                     if (iconJson.glyphs == null) throw new Exception("The 'glyphs' of the json is empty.");
 
                     // IconJson Context.
-                    var ctx = new IconfontContext(context, file, iconJson, iconName, ns, injectFallbackFont, useDefaultXmlnsPrefix);
+                    var ctx = new IconfontContext(context, file, iconJson, iconName, ns, autoFontFamily, injectFallbackFont, useDefaultXmlnsPrefix);
                     ctxs.Add(ctx);
 
                     // UseDefaultXmlnsPrefix.
@@ -176,11 +185,7 @@ namespace Nlnet.Sharp
         {
             var fontKeysName = $"SharpIconFamilyKeys";
             var fontMarkupName = $"SharpIconFamilyExtension";
-            var ns = context.GetMsBuildProperty("FontNamespace");
-            if (string.IsNullOrWhiteSpace(ns))
-            {
-                ns = context.GetDefaultNamespace();
-            }
+            var ns = GetFontNamespace(context);
 
             Build(ctxs, context, fontKeysName, builder =>
             {
@@ -364,11 +369,16 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine($"}}");
             });
 
+            var fontNs = GetFontNamespace(ctx.Context);
+
             Build(ctx, markupName, (builder) =>
             {
                 builder.AppendLine($"using System;");
                 builder.AppendLine($"using System.Collections.Generic;");
                 builder.AppendLine($"using Avalonia.Markup.Xaml;");
+                builder.AppendLine($"using Avalonia.Controls;");
+                builder.AppendLine($"using Avalonia.Controls.Documents;");
+                builder.AppendLine($"using {fontNs};");
                 builder.AppendLine();
                 builder.AppendLine($"namespace {ctx.Namespace};");
                 builder.AppendLine();
@@ -395,16 +405,31 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine();
                 builder.AppendLine($"{Indent}public {markupName}({markupKeysName} key) => _key = key;");
                 builder.AppendLine();
-                builder.AppendLine(@"
+
+                var autoFontFamily = string.Empty;
+                if (ctx.AutoFontFamily)
+                {
+                    autoFontFamily = $@"
+        var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+        if (targetProvider?.TargetObject is Control control)
+        {{
+            TextElement.SetFontFamily(control, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
+        }}
+";
+                }
+
+                builder.AppendLine($@"
     public override object ProvideValue(IServiceProvider serviceProvider)
-    {
+    {{
+{autoFontFamily}
+
         if (Values.TryGetValue(_key, out var v))
-        {
+        {{
             return v;
-        }
+        }}
 
         return _key;
-    }
+    }}
 ");
                 builder.AppendLine($"}};");
             });
@@ -471,6 +496,17 @@ internal static class {ctx.FallbackFontInjectorName}
         private static void AppendInitializingFallbackFontInjector(StringBuilder builder, IconfontContext ctx, string ctor)
         {
             builder.AppendLine($"{Indent}static {ctor}() => {ctx.FallbackFontInjectorName}.{IconfontContext.FallbackFontInjectorInitialize}();");
+        }
+
+        private static string GetFontNamespace(GeneratorExecutionContext context)
+        {
+            var ns = context.GetMsBuildProperty(MsBuildProperties.FontNamespace);
+            if (string.IsNullOrWhiteSpace(ns))
+            {
+                ns = context.GetDefaultNamespace();
+            }
+
+            return ns;
         }
     }
 }

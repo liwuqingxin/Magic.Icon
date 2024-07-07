@@ -6,30 +6,25 @@ namespace Nlnet.Sharp
 {
     internal static class GeneratorHelper
     {
+        private static char[] InvalidChars = new[]
+        {
+            ' ', '-', '.', '?', '+', '=', '*', '/', '\\', '!', '@', 
+            '#', '$', '%', '^', '&', ',', '~', '`', ';', ':',
+            '<', '>', '"', '\'', '|', '(', ')', '[', ']', '{', '}',
+        };
+
+
         public static string AsName(this string name)
         {
             var chars = name.ToArray();
             for (var i = 0; i < chars.Length; i++)
             {
                 var ch = chars[i];
-                if (ch >= 'a' && ch <= 'z')
-                {
-                    continue;
-                }
-                if (ch >= 'A' && ch <= 'Z')
-                {
-                    continue;
-                }
-                if (ch >= '0' && ch <= '9')
-                {
-                    continue;
-                }
 
-                if (ch == '_')
+                if (InvalidChars.Contains(ch))
                 {
-                    continue;
+                    chars[i] = '_';
                 }
-                chars[i] = '_';
             }
 
             return new string(chars);
