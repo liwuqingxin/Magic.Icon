@@ -1,177 +1,282 @@
 {
   "id": "4489927",
   "name": "Avalonia.DevTools.Color",
-  "font_family": "Devtools.Color",
+  "font_family": "Devtools-Color",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
     {
-      "icon_id": "40957578",
-      "name": "Day",
-      "font_class": "Day",
-      "unicode": "e642",
-      "unicode_decimal": 58946
-    },
-    {
-      "icon_id": "40957579",
-      "name": "IsFocusable",
-      "font_class": "IsFocusable",
-      "unicode": "e643",
-      "unicode_decimal": 58947
-    },
-    {
-      "icon_id": "40957580",
-      "name": "FolderOpen",
-      "font_class": "FolderOpen",
-      "unicode": "e644",
-      "unicode_decimal": 58948
-    },
-    {
-      "icon_id": "40957581",
-      "name": "IsFocused",
-      "font_class": "IsFocused",
-      "unicode": "e645",
-      "unicode_decimal": 58949
-    },
-    {
-      "icon_id": "40957582",
-      "name": "IsPinned",
-      "font_class": "IsPinned",
-      "unicode": "e646",
-      "unicode_decimal": 58950
-    },
-    {
-      "icon_id": "40957583",
-      "name": "IsClipToBounds",
-      "font_class": "IsClipToBounds",
-      "unicode": "e647",
-      "unicode_decimal": 58951
-    },
-    {
-      "icon_id": "40957584",
-      "name": "Hand",
-      "font_class": "Hand",
-      "unicode": "e648",
-      "unicode_decimal": 58952
-    },
-    {
-      "icon_id": "40957585",
-      "name": "IsEnabled",
-      "font_class": "IsEnabled",
-      "unicode": "e649",
-      "unicode_decimal": 58953
-    },
-    {
-      "icon_id": "40957586",
-      "name": "DayOrNight",
-      "font_class": "DayOrNight",
-      "unicode": "e64a",
-      "unicode_decimal": 58954
-    },
-    {
-      "icon_id": "40957587",
-      "name": "CaseSensitive",
-      "font_class": "CaseSensitive",
-      "unicode": "e64b",
-      "unicode_decimal": 58955
-    },
-    {
-      "icon_id": "40957588",
-      "name": "IsFocusedWithIn",
-      "font_class": "IsFocusedWithIn",
-      "unicode": "e64c",
-      "unicode_decimal": 58956
-    },
-    {
-      "icon_id": "40957589",
-      "name": "Regex",
-      "font_class": "Regex",
-      "unicode": "e64d",
-      "unicode_decimal": 58957
-    },
-    {
-      "icon_id": "40957590",
-      "name": "IsStop",
-      "font_class": "IsStop",
-      "unicode": "e64e",
-      "unicode_decimal": 58958
-    },
-    {
-      "icon_id": "40957591",
-      "name": "IsTabStop",
-      "font_class": "IsTabStop",
-      "unicode": "e64f",
-      "unicode_decimal": 58959
-    },
-    {
-      "icon_id": "40957592",
-      "name": "Sink",
-      "font_class": "Sink",
-      "unicode": "e650",
-      "unicode_decimal": 58960
-    },
-    {
-      "icon_id": "40957594",
+      "icon_id": "40970612",
       "name": "Night",
       "font_class": "Night",
-      "unicode": "e651",
-      "unicode_decimal": 58961
+      "unicode": "e677",
+      "unicode_decimal": 58999
     },
     {
-      "icon_id": "40957595",
-      "name": "WholeWord",
-      "font_class": "WholeWord",
-      "unicode": "e652",
-      "unicode_decimal": 58962
+      "icon_id": "40970603",
+      "name": "FolderOpen",
+      "font_class": "FolderOpen",
+      "unicode": "e678",
+      "unicode_decimal": 59000
     },
     {
-      "icon_id": "40957596",
-      "name": "IsSelected",
-      "font_class": "IsSelected",
-      "unicode": "e653",
-      "unicode_decimal": 58963
+      "icon_id": "40970604",
+      "name": "Hand",
+      "font_class": "Hand",
+      "unicode": "e679",
+      "unicode_decimal": 59001
     },
     {
-      "icon_id": "40957597",
-      "name": "IsDropDownOpen",
-      "font_class": "IsDropDownOpen",
-      "unicode": "e654",
-      "unicode_decimal": 58964
+      "icon_id": "40970607",
+      "name": "AlignTop",
+      "font_class": "AlignTop",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
     },
     {
-      "icon_id": "40957598",
+      "icon_id": "40970598",
+      "name": "AlignLeft",
+      "font_class": "AlignLeft",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "40970597",
+      "name": "AlignRight",
+      "font_class": "AlignRight",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "40970596",
+      "name": "AlignBottom",
+      "font_class": "AlignBottom",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "40970599",
+      "name": "AlignStretchVertical",
+      "font_class": "AlignStretchVertical",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "40970624",
+      "name": "IsPinned",
+      "font_class": "IsPinned",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "40970602",
+      "name": "IsFocusable",
+      "font_class": "IsFocusable",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "40970610",
+      "name": "AlignCenterVertical",
+      "font_class": "AlignCenterVertical",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "40970605",
+      "name": "DayOrNight",
+      "font_class": "DayOrNight",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "40970621",
+      "name": "CaseSensitive",
+      "font_class": "CaseSensitive",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "40970617",
+      "name": "IsTabStop",
+      "font_class": "IsTabStop",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "40970601",
+      "name": "AlignCenterHorizontal",
+      "font_class": "AlignCenterHorizontal",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "40970616",
+      "name": "Lock",
+      "font_class": "Lock",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "40970620",
+      "name": "Regex",
+      "font_class": "Regex",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "40970618",
       "name": "IsVisible",
       "font_class": "IsVisible",
-      "unicode": "e655",
-      "unicode_decimal": 58965
+      "unicode": "e674",
+      "unicode_decimal": 58996
     },
     {
-      "icon_id": "40957599",
-      "name": "Node",
-      "font_class": "Node",
-      "unicode": "e656",
-      "unicode_decimal": 58966
+      "icon_id": "40970613",
+      "name": "IsSelected",
+      "font_class": "IsSelected",
+      "unicode": "e675",
+      "unicode_decimal": 58997
     },
     {
-      "icon_id": "40957600",
-      "name": "TriangleRuler",
-      "font_class": "TriangleRuler",
-      "unicode": "e657",
-      "unicode_decimal": 58967
+      "icon_id": "40970608",
+      "name": "IsEnabled",
+      "font_class": "IsEnabled",
+      "unicode": "e676",
+      "unicode_decimal": 58998
     },
     {
-      "icon_id": "40957601",
-      "name": "IsOpen",
-      "font_class": "IsOpen",
+      "icon_id": "40970636",
+      "name": "Sink",
+      "font_class": "Sink",
       "unicode": "e658",
       "unicode_decimal": 58968
     },
     {
-      "icon_id": "40957602",
-      "name": "Scop",
-      "font_class": "Scop",
+      "icon_id": "40970627",
+      "name": "TriangleRuler",
+      "font_class": "TriangleRuler",
       "unicode": "e659",
       "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "40970609",
+      "name": "IsStop",
+      "font_class": "IsStop",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "40970635",
+      "name": "Node",
+      "font_class": "Node",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "40970634",
+      "name": "Scop",
+      "font_class": "Scop",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "40970619",
+      "name": "IsClipToBounds",
+      "font_class": "IsClipToBounds",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "40970629",
+      "name": "IsDropDownOpen",
+      "font_class": "IsDropDownOpen",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "40970614",
+      "name": "AlignStretchHorizontal",
+      "font_class": "AlignStretchHorizontal",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "40970633",
+      "name": "Question",
+      "font_class": "Question",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "40970631",
+      "name": "AttachedProperty",
+      "font_class": "AttachedProperty",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "40970628",
+      "name": "Null",
+      "font_class": "Null",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "40970606",
+      "name": "IsFocused",
+      "font_class": "IsFocused",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "40970626",
+      "name": "List",
+      "font_class": "List",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "40970615",
+      "name": "Field",
+      "font_class": "Field",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "40970623",
+      "name": "IsFocusedWithIn",
+      "font_class": "IsFocusedWithIn",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "40970639",
+      "name": "IsOpen",
+      "font_class": "IsOpen",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "40970600",
+      "name": "Day",
+      "font_class": "Day",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "40970638",
+      "name": "WholeWord",
+      "font_class": "WholeWord",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "40970630",
+      "name": "Property",
+      "font_class": "Property",
+      "unicode": "e655",
+      "unicode_decimal": 58965
     }
   ]
 }

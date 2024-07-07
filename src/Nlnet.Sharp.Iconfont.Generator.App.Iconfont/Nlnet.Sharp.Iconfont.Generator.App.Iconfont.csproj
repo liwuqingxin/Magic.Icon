@@ -5,6 +5,7 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<AvaloniaResource Remove="Assets\coloful.json" />
 		<AvaloniaResource Remove="Assets\iconfont.json" />
 	</ItemGroup>
 
@@ -13,11 +14,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!--InjectFallbackFont is recommanded to use for one font.-->
+		<AdditionalFiles Include="Assets\coloful.json"
+		                 IconName="ColorIcon"
+		                 IconNamespace="Nlnet.Sharp"
+		                 UseDefaultXmlnsPrefix="true"
+		                 InjectFallbackFont="true" />
+
 		<AdditionalFiles Include="Assets\iconfont.json"
 		                 IconName="Icon"
-		                 IconNamespace="Nlnet.Sharp" 
+		                 IconNamespace="Nlnet.Sharp"
 		                 UseDefaultXmlnsPrefix="true"
-		                 InjectFallbackFont="true"/>
+		                 InjectFallbackFont="false" />
 	</ItemGroup>
 
 	<ItemGroup>

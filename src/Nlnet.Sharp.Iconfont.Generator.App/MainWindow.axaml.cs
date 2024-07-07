@@ -12,12 +12,7 @@ public partial class MainWindow : Window
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        var viewer = new IconViewer()
-        {
-            WindowStartupLocation = WindowStartupLocation.CenterOwner,
-            Width = 960,
-            Height = 720,
-        };
+        var viewer = new IconViewer();
         viewer.ShowDialog(this);
     }
 }

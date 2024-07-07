@@ -14,16 +14,15 @@
                 VerticalAlignment="Center"
                 Spacing="20">
         <StackPanel Spacing="10">
-            <TextBlock Text="{Binding Source={x:Static IconInfo.Id}, StringFormat='Id:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static IconInfo.Name}, StringFormat='Name:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static IconInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-            <TextBlock Text="{Binding Source={x:Static IconInfo.Description}, StringFormat='Description:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Id}, StringFormat='Id:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Name}, StringFormat='Name:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Count}, StringFormat='Count:   {0}'}" />
+            <TextBlock Text="{Binding Source={x:Static ColorIconInfo.Description}, StringFormat='Description:   {0}'}" />
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal"
-                    Spacing="10">
+
+        <StackPanel HorizontalAlignment="Center">
             <StackPanel.Styles>
                 <Style Selector="TextBlock">
                     <Setter Property="FontSize" Value="48" />
@@ -33,7 +32,7 @@
                         <Transitions>
                             <TransformOperationsTransition Easing="0.5,0.8,0.5,0.8"
                                                            Property="RenderTransform"
-                                                           Duration="0:0:0.3" />
+                                                           Duration="0:0:0.2" />
                         </Transitions>
                     </Setter>
                     <Style Selector="^:pointerover">
@@ -42,15 +41,30 @@
                     </Style>
                 </Style>
             </StackPanel.Styles>
-            <TextBlock Text="{x:Static nlnet:IconChars.Hand}" />
-            <TextBlock Text="{x:Static nlnet:IconChars.Night}" />
-            <TextBlock Text="{Icon IsOpen}" />
-            <TextBlock Text="{Icon CaseSensitive}" />
-            <TextBlock Text="{Icon Day}" />
-            <TextBlock Text="{Icon DayOrNight}" />
-            <TextBlock Text="{Icon IsClipToBounds}" />
-            <TextBlock Text="{Icon IsDropDownOpen}" />
+
+            <!-- If the iconfont is built with MSBuild property InjectFallbackFont, FontFamily property can be saved. -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="{x:Static nlnet:ColorIconChars.Hand}" />
+                <TextBlock Text="{ColorIcon IsOpen}" />
+                <TextBlock Text="{ColorIcon CaseSensitive}" />
+                <TextBlock Text="{ColorIcon Day}" />
+                <TextBlock Text="{ColorIcon DayOrNight}" />
+                <TextBlock Text="{ColorIcon IsClipToBounds}" />
+                <TextBlock Text="{ColorIcon IsDropDownOpen}" />
+            </StackPanel>
+
+            <!-- Please note that only one iconfont can be built with InjectFallbackFont. -->
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{x:Static nlnet:IconChars.Property}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{ColorIcon IsDropDownOpen}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsStop}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsTabStop}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon AlignStretchHorizontal}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon Regex}" />
+                <TextBlock FontFamily="{SharpIconFamily Icon}" Text="{Icon IsFocused}" />
+            </StackPanel>
         </StackPanel>
+
 
         <Button Height="32"
                 HorizontalAlignment="Center"

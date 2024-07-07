@@ -15,7 +15,8 @@
 		<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersionThatSampleUsed)" />
 		<PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersionThatSampleUsed)" />
 		<PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersionThatSampleUsed)" />		
-		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersionThatSampleUsed)" />
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersionThatSampleUsed)" />		
+		<PackageReference Include="Nlnet.Avalonia.DevTools" Version="1.0.1-beta.21" />
 	</ItemGroup>
 
 	<ItemGroup>
