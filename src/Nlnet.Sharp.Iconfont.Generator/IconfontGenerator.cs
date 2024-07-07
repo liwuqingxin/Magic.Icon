@@ -22,7 +22,7 @@ namespace Nlnet.Sharp
 
         private static class MsBuildProperties
         {
-            public const string FontNamespace = nameof(FontNamespace);
+            public const string GlobalNamespace = nameof(GlobalNamespace);
 
             public const string IconName = nameof(IconName);
 
@@ -185,7 +185,7 @@ namespace Nlnet.Sharp
         {
             var fontKeysName = $"SharpIconFamilyKeys";
             var fontMarkupName = $"SharpIconFamilyExtension";
-            var ns = GetFontNamespace(context);
+            var ns = GetGlobalNamespace(context);
 
             Build(ctxs, context, fontKeysName, builder =>
             {
@@ -369,7 +369,7 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine($"}}");
             });
 
-            var fontNs = GetFontNamespace(ctx.Context);
+            var fontNs = GetGlobalNamespace(ctx.Context);
 
             Build(ctx, markupName, (builder) =>
             {
@@ -378,6 +378,7 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine($"using Avalonia.Markup.Xaml;");
                 builder.AppendLine($"using Avalonia.Controls;");
                 builder.AppendLine($"using Avalonia.Controls.Documents;");
+                builder.AppendLine($"using System.Text;");
                 builder.AppendLine($"using {fontNs};");
                 builder.AppendLine();
                 builder.AppendLine($"namespace {ctx.Namespace};");
@@ -405,30 +406,56 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine();
                 builder.AppendLine($"{Indent}public {markupName}({markupKeysName} key) => _key = key;");
                 builder.AppendLine();
-
-                var autoFontFamily = string.Empty;
-                if (ctx.AutoFontFamily)
-                {
-                    autoFontFamily = $@"
-        var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-        if (targetProvider?.TargetObject is Control control)
-        {{
-            TextElement.SetFontFamily(control, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
-        }}
-";
-                }
-
                 builder.AppendLine($@"
+    public string Prefix {{ get; set; }}
+
+    public string Suffix {{ get; set; }}
+
+    public bool SpaceBetween {{ get; set; }} = true;
+
+    public bool AutoFontFamily {{ get; set; }} = {ctx.AutoFontFamily.ToString().ToLower()};
+
+    private const string Space = ""\u00a0"";
+
     public override object ProvideValue(IServiceProvider serviceProvider)
     {{
-{autoFontFamily}
-
-        if (Values.TryGetValue(_key, out var v))
+        if (AutoFontFamily)
         {{
-            return v;
+            var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+            if (targetProvider?.TargetObject is Control control)
+            {{
+                TextElement.SetFontFamily(control, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
+            }}
+            else if (targetProvider?.TargetObject is TextElement element)
+            {{
+                element.SetCurrentValue(TextElement.FontFamilyProperty, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
+            }}
         }}
 
-        return _key;
+        Values.TryGetValue(_key, out var v);
+        
+        return Concatenate(Space, Prefix, v, Suffix);
+    }}
+
+    private static string Concatenate(string separator, params string[] strings)
+    {{
+        var builder = new StringBuilder();
+
+        foreach (var s in strings)
+        {{
+            if (string.IsNullOrEmpty(s))
+            {{
+                continue;
+            }}
+            builder.Append(s);
+            builder.Append(separator);
+        }}
+
+        if (builder.Length > 0)
+        {{
+            builder.Remove(builder.Length - 1, 1);
+        }}
+        return builder.ToString();
     }}
 ");
                 builder.AppendLine($"}};");
@@ -498,9 +525,9 @@ internal static class {ctx.FallbackFontInjectorName}
             builder.AppendLine($"{Indent}static {ctor}() => {ctx.FallbackFontInjectorName}.{IconfontContext.FallbackFontInjectorInitialize}();");
         }
 
-        private static string GetFontNamespace(GeneratorExecutionContext context)
+        private static string GetGlobalNamespace(GeneratorExecutionContext context)
         {
-            var ns = context.GetMsBuildProperty(MsBuildProperties.FontNamespace);
+            var ns = context.GetMsBuildProperty(MsBuildProperties.GlobalNamespace);
             if (string.IsNullOrWhiteSpace(ns))
             {
                 ns = context.GetDefaultNamespace();

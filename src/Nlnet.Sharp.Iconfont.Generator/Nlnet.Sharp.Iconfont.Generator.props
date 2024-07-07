@@ -7,10 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!--Obsolete-->
-		<CompilerVisibleProperty Include="GenerateIconClass" />
-		<CompilerVisibleProperty Include="GenerateIconMarkup" />
-		<CompilerVisibleProperty Include="FontNamespace" />
+		<CompilerVisibleProperty Include="GlobalNamespace" />
 
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconName" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />

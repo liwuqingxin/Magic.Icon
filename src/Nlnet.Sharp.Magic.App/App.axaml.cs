@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Nlnet.Avalonia.DevTools;
 
 namespace Nlnet.Sharp;
 
@@ -10,7 +11,7 @@ public partial class App : Application
     {
         AvaloniaXamlLoader.Load(this);
 
-        //AvaloniaDevTools.UseDevTools();
+        AvaloniaDevTools.UseDevTools();
     }
 
     public override void OnFrameworkInitializationCompleted()

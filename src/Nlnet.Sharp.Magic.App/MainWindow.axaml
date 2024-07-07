@@ -2,10 +2,10 @@
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:iconA="clr-namespace:Nlnet.Sharp.IconA;assembly=Nlnet.Sharp.Magic.App.Iconfont"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nlnet="https://www.nlnet.net"
         xmlns:sharp="clr-namespace:Nlnet.Sharp"
-        xmlns:iconA="clr-namespace:Nlnet.Sharp.IconA;assembly=Nlnet.Sharp.Magic.App.Iconfont"
         Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
         Width="800"
         Height="500"
@@ -17,6 +17,7 @@
             <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
         <Style Selector="IconBlock">
+            <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="FontSize" Value="48" />
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -69,43 +70,43 @@
 
         <TabItem Header="Build-Info">
             <ScrollViewer>
-				<StackPanel Spacing="3">
-					<TextBlock Text="IconA"/>
-					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Id}, StringFormat='Id:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Name}, StringFormat='Name:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Count}, StringFormat='Count:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Description}, StringFormat='Description:   {0}'}" />
+                <StackPanel Spacing="3">
+                    <TextBlock Text="IconA" />
+                    <TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Id}, StringFormat='Id:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Name}, StringFormat='Name:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Count}, StringFormat='Count:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static iconA:IconAInfo.Description}, StringFormat='Description:   {0}'}" />
 
-					<TextBlock Text=" " />
+                    <TextBlock Text=" " />
 
-					<TextBlock Text="IconB"/>
-					<TextBlock Text="{Binding Source={x:Static IconBInfo.Id}, StringFormat='Id:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconBInfo.Name}, StringFormat='Name:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconBInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconBInfo.Count}, StringFormat='Count:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconBInfo.Description}, StringFormat='Description:   {0}'}" />
+                    <TextBlock Text="IconB" />
+                    <TextBlock Text="{Binding Source={x:Static IconBInfo.Id}, StringFormat='Id:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconBInfo.Name}, StringFormat='Name:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconBInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconBInfo.Count}, StringFormat='Count:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconBInfo.Description}, StringFormat='Description:   {0}'}" />
 
-					<TextBlock Text=" " />
+                    <TextBlock Text=" " />
 
-					<TextBlock Text="IconC"/>
-					<TextBlock Text="{Binding Source={x:Static IconCInfo.Id}, StringFormat='Id:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconCInfo.Name}, StringFormat='Name:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconCInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconCInfo.Count}, StringFormat='Count:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconCInfo.Description}, StringFormat='Description:   {0}'}" />
+                    <TextBlock Text="IconC" />
+                    <TextBlock Text="{Binding Source={x:Static IconCInfo.Id}, StringFormat='Id:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconCInfo.Name}, StringFormat='Name:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconCInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconCInfo.Count}, StringFormat='Count:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconCInfo.Description}, StringFormat='Description:   {0}'}" />
 
-					<TextBlock Text=" " />
+                    <TextBlock Text=" " />
 
-					<TextBlock Text="IconD"/>
-					<TextBlock Text="{Binding Source={x:Static IconDInfo.Id}, StringFormat='Id:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconDInfo.Name}, StringFormat='Name:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconDInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconDInfo.Count}, StringFormat='Count:   {0}'}" />
-					<TextBlock Text="{Binding Source={x:Static IconDInfo.Description}, StringFormat='Description:   {0}'}" />
-				</StackPanel>
-			</ScrollViewer>
-		</TabItem>
+                    <TextBlock Text="IconD" />
+                    <TextBlock Text="{Binding Source={x:Static IconDInfo.Id}, StringFormat='Id:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconDInfo.Name}, StringFormat='Name:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconDInfo.FontFamily}, StringFormat='FontFamily:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconDInfo.Count}, StringFormat='Count:   {0}'}" />
+                    <TextBlock Text="{Binding Source={x:Static IconDInfo.Description}, StringFormat='Description:   {0}'}" />
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
 
         <TabItem Header="Using Chars">
             <StackPanel Spacing="20">
@@ -136,14 +137,53 @@
 
         <TabItem Header="Save FontFamily">
             <StackPanel Spacing="20">
-                <TextBlock Text="Save the FontFamily by setting property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set" />
-                <IconBlock FontFamily="{SharpIconFamily IconD}" Text="{IconD 芝士蛋糕}" />
+                <TextBlock Text="Save the FontFamily by setting MSBuild property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set by default." />
+                <IconBlock Text="{IconD 芝士蛋糕}" />
 
-                <!-- If the iconfont is built with MSBuild property InjectFallbackFont, FontFamily property can be saved. -->
-                <!-- Please note that only one iconfont can be built with InjectFallbackFont. -->
-                <TextBlock Text="With IconC markup extension. IconC is built with 'InjectFallbackFont'." />
+                <TextBlock Text="Save the FontFamily by setting property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set." />
+                <IconBlock Text="{IconB AlignBottom, AutoFontFamily=True}" />
+
+                <!-- If the iconfont is built with MSBuild property 'InjectFallbackFont', FontFamily property can be saved. -->
+                <!-- Please note that only one iconfont can be built with 'InjectFallbackFont'. -->
+                <TextBlock Text="Save the FontFamily by setting MSBuild property 'InjectFallbackFont' to true. Note that the FontFamily will be injected into FontManager as fallback FontFamily." />
                 <IconBlock Text="{IconC GitHub}" />
             </StackPanel>
+        </TabItem>
+
+        <TabItem Header="Icon and Text">
+            <ScrollViewer>
+                <StackPanel Spacing="20">
+                    <StackPanel.Styles>
+                        <Style Selector="IconBlock">
+                            <Setter Property="FontSize" Value="18" />
+                        </Style>
+                    </StackPanel.Styles>
+                    <TextBlock Text="Use an icon in a text. Note that the FontFamily must be the icon's. You can use the FontManagerOptions to control the text's FontFamily." />
+                    <IconBlock Text="{IconD 彩椒, Prefix='The icon is', Suffix='and it is also named 彩椒.'}" />
+
+                    <TextBlock Text="A list of icons and texts." />
+                    <IconBlock Text="{IconD 咖啡, Suffix='This is Coffee (咖啡).'}" />
+                    <IconBlock Text="{IconD 布丁, Suffix='This is Pudding (布丁).'}" />
+                    <IconBlock Text="{IconD 树莓, Suffix='This is Raspberry (树莓).'}" />
+                    <IconBlock Text="{IconD 柚子, Suffix='This is Grapefruit (柚子).'}" />
+                    <IconBlock Text="{IconD 汉堡, Suffix='This is Burger (汉堡).'}" />
+
+                    <TextBlock Text="Test for character when an icon is used. Note that the last line is clipped." />
+                    <IconBlock Text="{IconD 李子, Suffix='中文，abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789_+*%$#@!(){}[]|?;:'}" />
+
+                    <TextBlock Text="Use Run to combine icons and texts." />
+                    <IconBlock>
+                        <Run BaselineAlignment="Center"
+                             FontSize="32"
+                             Text="{IconD 奥利奥}" />
+                        <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
+                        <Run BaselineAlignment="Baseline"
+                             FontSize="64"
+                             Text="{IconD 栗子}" />
+                        <Run BaselineAlignment="Center" Text="中文：abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789_+*%$#@!(){}[]|?;:" />
+                    </IconBlock>
+                </StackPanel>
+            </ScrollViewer>
         </TabItem>
 
         <TabItem Header="Icon Viewer">

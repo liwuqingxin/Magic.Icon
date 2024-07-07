@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Media;
 using Avalonia.ReactiveUI;
 
 namespace Nlnet.Sharp;
@@ -17,7 +18,13 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-            .WithInterFont()
             .LogToTrace()
-            .UseReactiveUI();
+            .UseReactiveUI()
+            .With(new FontManagerOptions()
+            {
+                FontFallbacks = new FontFallback[]
+                {
+                    new() { FontFamily = FontFamily.Parse("微软雅黑") }
+                }
+            });
 }
