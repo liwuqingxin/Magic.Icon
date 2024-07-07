@@ -20,7 +20,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Nlnet.Sharp.Iconfont.Generator.App.Iconfont\Nlnet.Sharp.Iconfont.Generator.App.Iconfont.csproj" />
+		<ProjectReference Include="..\Nlnet.Sharp.Magic.App.Iconfont\Nlnet.Sharp.Magic.App.Iconfont.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

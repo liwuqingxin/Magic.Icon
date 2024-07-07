@@ -23,9 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{43A9E1DD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator", "Nlnet.Sharp.Iconfont.Generator\Nlnet.Sharp.Iconfont.Generator.csproj", "{886D1989-BD28-4F2B-B26E-15FC263C8D28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator.App", "Nlnet.Sharp.Iconfont.Generator.App\Nlnet.Sharp.Iconfont.Generator.App.csproj", "{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Magic.App", "Nlnet.Sharp.Magic.App\Nlnet.Sharp.Magic.App.csproj", "{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Iconfont.Generator.App.Iconfont", "Nlnet.Sharp.Iconfont.Generator.App.Iconfont\Nlnet.Sharp.Iconfont.Generator.App.Iconfont.csproj", "{5D980026-BF46-439C-84DD-89CCCAF07A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nlnet.Sharp.Magic.App.Iconfont", "Nlnet.Sharp.Magic.App.Iconfont\Nlnet.Sharp.Magic.App.Iconfont.csproj", "{05C577F4-9193-474E-8F5F-7CCBFC86932E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,22 +37,22 @@ Global
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886D1989-BD28-4F2B-B26E-15FC263C8D28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D980026-BF46-439C-84DD-89CCCAF07A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C577F4-9193-474E-8F5F-7CCBFC86932E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{43A9E1DD-8565-435A-8212-AAD9FCA8FDF4} = {1E6C1FBE-9B68-4321-9FF3-43C1AFBF646F}
-		{F87C100C-4D6D-42DB-B8EE-9AF7DE0E6682} = {D9664454-47AC-4331-96CE-4BC83552013C}
-		{5D980026-BF46-439C-84DD-89CCCAF07A76} = {D9664454-47AC-4331-96CE-4BC83552013C}
+		{CF1FB3FF-42ED-4C9A-B950-6455F49A9DE2} = {D9664454-47AC-4331-96CE-4BC83552013C}
+		{05C577F4-9193-474E-8F5F-7CCBFC86932E} = {D9664454-47AC-4331-96CE-4BC83552013C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F92A6194-7E11-4780-A383-90788A785624}
