@@ -11,7 +11,8 @@
 
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconName" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="IconNamespace" />
-		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoFontFamily" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSetFontFamily" />
+		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="ConsiderIIconVisualWhenAutoSetFontFamily" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="InjectFallbackFont" />
 		<CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="UseDefaultXmlnsPrefix" />
     </ItemGroup>

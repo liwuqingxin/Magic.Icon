@@ -9,6 +9,7 @@
         Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
         Width="800"
         Height="500"
+        Icon="Assets/Magic.ico"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
 
@@ -37,13 +38,16 @@
 
     <TabControl Padding="30" TabStripPlacement="Left">
         <TabItem Header="About">
-            <TextBlock TextWrapping="Wrap">
-                <Run>We provide a magic ability to generate icon classes from iconfont.json which comes from</Run>
-                <Run Foreground="Blue">https://www.iconfont.cn/</Run>
-                .<LineBreak />
-                <LineBreak />
-                <Run>You can use it in avalonia (and wpf in later versions), in kinds of approaches.</Run>
-            </TextBlock>
+            <StackPanel Spacing="20">
+                <Image Width="200" Source="Assets/Magic.Clean.png" HorizontalAlignment="Left"/>
+                <TextBlock TextWrapping="Wrap">
+                    <Run>We provide a magic ability to generate icon classes from iconfont.json which comes from</Run>
+                    <Run Foreground="Blue">https://www.iconfont.cn/</Run>
+                    .<LineBreak />
+                    <LineBreak />
+                    <Run>You can use it in avalonia (and wpf in later versions), in kinds of approaches.</Run>
+                </TextBlock>
+            </StackPanel>
         </TabItem>
 
         <TabItem Header="First of all">
@@ -137,15 +141,15 @@
 
         <TabItem Header="Save FontFamily">
             <StackPanel Spacing="20">
-                <TextBlock Text="Save the FontFamily by setting MSBuild property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set by default." />
+                <TextBlock Text="Save the FontFamily in Xaml by setting MSBuild property 'AutoSetFontFamily' to true. Note that the FontFamily will be forced to set by default." />
                 <IconBlock Text="{IconD 芝士蛋糕}" />
 
-                <TextBlock Text="Save the FontFamily by setting property 'AutoFontFamily' to true. Note that the FontFamily will be forced to set." />
-                <IconBlock Text="{IconB AlignBottom, AutoFontFamily=True}" />
+                <TextBlock Text="Save the FontFamily in Xaml by setting property 'AutoSetFontFamily' to true. Note that the FontFamily will be forced to set." />
+                <IconBlock Text="{IconB AlignBottom, AutoSetFontFamily=True}" />
 
                 <!-- If the iconfont is built with MSBuild property 'InjectFallbackFont', FontFamily property can be saved. -->
                 <!-- Please note that only one iconfont can be built with 'InjectFallbackFont'. -->
-                <TextBlock Text="Save the FontFamily by setting MSBuild property 'InjectFallbackFont' to true. Note that the FontFamily will be injected into FontManager as fallback FontFamily." />
+                <TextBlock Text="Save the FontFamily globally by setting MSBuild property 'InjectFallbackFont' to true. Note that the FontFamily will be injected into FontManager as fallback FontFamily. Only one iconfont can be built with 'InjectFallbackFont'." />
                 <IconBlock Text="{IconC GitHub}" />
             </StackPanel>
         </TabItem>
@@ -158,30 +162,70 @@
                             <Setter Property="FontSize" Value="18" />
                         </Style>
                     </StackPanel.Styles>
-                    <TextBlock Text="Use an icon in a text. Note that the FontFamily must be the icon's. You can use the FontManagerOptions to control the text's FontFamily." />
+                    <TextBlock>
+                        <Run Text="Use an icon in a text. Note that the FontFamily must be the icon's." />
+                        <Run Text="You can use the FontManagerOptions to control the text's FontFamily." />
+                        <Run Text="Note that the last line is clipped. It is not recommended to use it." />
+                    </TextBlock>
                     <IconBlock Text="{IconD 彩椒, Prefix='The icon is', Suffix='and it is also named 彩椒.'}" />
-
-                    <TextBlock Text="A list of icons and texts." />
                     <IconBlock Text="{IconD 咖啡, Suffix='This is Coffee (咖啡).'}" />
                     <IconBlock Text="{IconD 布丁, Suffix='This is Pudding (布丁).'}" />
                     <IconBlock Text="{IconD 树莓, Suffix='This is Raspberry (树莓).'}" />
-                    <IconBlock Text="{IconD 柚子, Suffix='This is Grapefruit (柚子).'}" />
-                    <IconBlock Text="{IconD 汉堡, Suffix='This is Burger (汉堡).'}" />
 
-                    <TextBlock Text="Test for character when an icon is used. Note that the last line is clipped." />
-                    <IconBlock Text="{IconD 李子, Suffix='中文，abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789_+*%$#@!(){}[]|?;:'}" />
-
-                    <TextBlock Text="Use Run to combine icons and texts." />
-                    <IconBlock>
-                        <Run BaselineAlignment="Center"
-                             FontSize="32"
-                             Text="{IconD 奥利奥}" />
-                        <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
-                        <Run BaselineAlignment="Baseline"
-                             FontSize="64"
-                             Text="{IconD 栗子}" />
-                        <Run BaselineAlignment="Center" Text="中文：abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789_+*%$#@!(){}[]|?;:" />
-                    </IconBlock>
+                    <TextBlock Text="Use Run to combine icons and texts. In this way, FontFamily of icons and texts does not interact each other." />
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <IconBlock>
+                            <Run FontSize="24" Text="{IconD 奥利奥}" />
+                            <Run Text="This is Oreo (奥利奥)." />
+                            <Run FontSize="48" Text="{IconD 树莓}" />
+                            <Run Text="This is Raspberry (树莓)." />
+                        </IconBlock>
+                    </Border>
+                    
+                    <TextBlock Text="Also we can have more controls on them, like 'BaselineAlignment'." />
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <IconBlock>
+                            <Run BaselineAlignment="Center"
+                                 FontSize="24"
+                                 Text="{IconD 奥利奥}" />
+                            <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
+                            <Run BaselineAlignment="Baseline"
+                                 FontSize="48"
+                                 Text="{IconD 树莓}" />
+                            <Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
+                        </IconBlock>
+                    </Border>
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <IconBlock>
+                            <Run BaselineAlignment="Center" Text="{IconD 奥利奥}" />
+                            <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
+                            <Run BaselineAlignment="Baseline" Text="{IconD 树莓}" />
+                            <Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
+                        </IconBlock>
+                    </Border>
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <IconBlock FontSize="12">
+                            <Run Text="{IconD 橙子}" />
+                            <Run Text="This is Raspberry (树莓)." />
+                        </IconBlock>
+                    </Border>
+                    
+                    <TextBlock Text="If you use Nlnet.Sharp.Magic.Icon package in nuget, you can use 'IconTextBlock' which has a Icon property." />
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <nlnet:IconTextBlock Icon="{IconD 橙子}"
+                                             Text="This is Raspberry g (树莓)."
+                                             ToolTip.Tip="{Binding $self.FontFamily}" />
+                    </Border>
+                    
+                    <TextBlock>
+                        <Run Text="The IconXxxExtension will auto set FontFamily if AutoSetFontFamily is true." />
+                        <Run Text="We can make that happened on the Run of icon but the whole control by set MSBuild property 'ConsiderIIconVisualWhenAutoSetFontFamily' to true in IconTextBlock." />
+                    </TextBlock>
+                    <Border BorderBrush="Red" BorderThickness="1">
+                        <nlnet:IconTextBlock Icon="{IconE 橙子}"
+                                             Text="This is Raspberry g (树莓)."
+                                             ToolTip.Tip="{Binding $self.FontFamily}" />
+                    </Border>
                 </StackPanel>
             </ScrollViewer>
         </TabItem>

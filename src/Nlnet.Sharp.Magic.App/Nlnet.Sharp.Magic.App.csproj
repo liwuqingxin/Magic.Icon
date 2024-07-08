@@ -7,7 +7,12 @@
 		<OutputType>WinExe</OutputType>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<ApplicationIcon>Assets\Magic.ico</ApplicationIcon>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\**" />
+	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="$(AvaloniaVersionThatSampleUsed)" />

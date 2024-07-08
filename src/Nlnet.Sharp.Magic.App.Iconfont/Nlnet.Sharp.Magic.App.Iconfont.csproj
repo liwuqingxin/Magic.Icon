@@ -17,15 +17,21 @@
 
 	<ItemGroup>
 		<!--InjectFallbackFont is recommanded to use for one font.-->
-		<AdditionalFiles Include="Assets\icon_a.json" IconName="IconA" IconNamespace="Nlnet.Sharp.IconA"/>
+		<AdditionalFiles Include="Assets\icon_a.json" IconName="IconA" IconNamespace="Nlnet.Sharp.IconA" />
 		<AdditionalFiles Include="Assets\icon_b.json" IconName="IconB" UseDefaultXmlnsPrefix="true" />
 		<AdditionalFiles Include="Assets\icon_c.json" IconName="IconC" IconNamespace="Nlnet.Sharp.IconC" UseDefaultXmlnsPrefix="true" InjectFallbackFont="true" />
-		<AdditionalFiles Include="Assets\icon_d.json" IconName="IconD" IconNamespace="Nlnet.Sharp.IconD" UseDefaultXmlnsPrefix="true" AutoFontFamily="true" />
+		<AdditionalFiles Include="Assets\icon_d.json" IconName="IconD" IconNamespace="Nlnet.Sharp.IconD" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" />
+		<AdditionalFiles Include="Assets\icon_e.json" IconName="IconE" IconNamespace="Nlnet.Sharp.IconE" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" ConsiderIIconVisualWhenAutoSetFontFamily="true" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Nlnet.Sharp.Iconfont.Generator" Version="$(NugetPackageVersion)" />
+		<!-- PrivateAssets see https://www.coder.work/article/1621642 -->
+		<PackageReference Include="Nlnet.Sharp.Iconfont.Generator" Version="$(NugetPackageVersion)" PrivateAssets="All" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<!--<ProjectReference Include="..\Nlnet.Sharp.Iconfont.Generator\Nlnet.Sharp.Iconfont.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Nlnet.Sharp.Magic.Icon\Nlnet.Sharp.Magic.Icon.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -28,7 +28,9 @@ namespace Nlnet.Sharp
 
             public const string IconNamespace = nameof(IconNamespace);
 
-            public const string AutoFontFamily = nameof(AutoFontFamily);
+            public const string AutoSetFontFamily = nameof(AutoSetFontFamily);
+            
+            public const string ConsiderIIconVisualWhenAutoSetFontFamily = nameof(ConsiderIIconVisualWhenAutoSetFontFamily);
 
             public const string InjectFallbackFont = nameof(InjectFallbackFont);
 
@@ -38,23 +40,25 @@ namespace Nlnet.Sharp
         private class IconfontContext
         {
             public IconfontContext(
-                GeneratorExecutionContext context, 
-                AdditionalText file, 
-                IconJson iconJson, 
-                string name, 
-                string ns, 
-                bool autoFontFamily,
-                bool injectFallbackFont,
-                bool useDefaultXmlnsPrefix)
+                GeneratorExecutionContext context,
+                AdditionalText            file,
+                IconJson                  iconJson,
+                string                    name,
+                string                    ns,
+                bool                      autoSetFontFamily,
+                bool                      considerIIconVisualWhenAutoSetFontFamily,
+                bool                      injectFallbackFont,
+                bool                      useDefaultXmlnsPrefix)
             {
-                Context = context;
-                File = file;
-                IconJson = iconJson;
-                Name = name;
-                Namespace = ns;
-                AutoFontFamily = autoFontFamily;
-                InjectFallbackFont = injectFallbackFont;
-                UseDefaultXmlnsPrefix = useDefaultXmlnsPrefix;
+                Context                                  = context;
+                File                                     = file;
+                IconJson                                 = iconJson;
+                Name                                     = name;
+                Namespace                                = ns;
+                AutoSetFontFamily                        = autoSetFontFamily;
+                ConsiderIIconVisualWhenAutoSetFontFamily = considerIIconVisualWhenAutoSetFontFamily;
+                InjectFallbackFont                       = injectFallbackFont;
+                UseDefaultXmlnsPrefix                    = useDefaultXmlnsPrefix;
             }
 
             public IconJson IconJson { get; }
@@ -67,7 +71,9 @@ namespace Nlnet.Sharp
 
             public string Namespace { get; }
 
-            public bool AutoFontFamily { get; }
+            public bool AutoSetFontFamily { get; }
+            
+            public bool ConsiderIIconVisualWhenAutoSetFontFamily { get; }
 
             public bool InjectFallbackFont { get; }
 
@@ -133,8 +139,9 @@ namespace Nlnet.Sharp
                     }
 
                     // Options
-                    var autoFontFamily = context.GetBoolProperty(file, MsBuildProperties.AutoFontFamily);
-                    var injectFallbackFont = context.GetBoolProperty(file, MsBuildProperties.InjectFallbackFont);
+                    var autoSetFontFamily     = context.GetBoolProperty(file, MsBuildProperties.AutoSetFontFamily);
+                    var considerIIconVisual   = context.GetBoolProperty(file, MsBuildProperties.ConsiderIIconVisualWhenAutoSetFontFamily);
+                    var injectFallbackFont    = context.GetBoolProperty(file, MsBuildProperties.InjectFallbackFont);
                     var useDefaultXmlnsPrefix = context.GetBoolProperty(file, MsBuildProperties.UseDefaultXmlnsPrefix);
 
                     // Json.
@@ -148,7 +155,16 @@ namespace Nlnet.Sharp
                     if (iconJson.glyphs == null) throw new Exception("The 'glyphs' of the json is empty.");
 
                     // IconJson Context.
-                    var ctx = new IconfontContext(context, file, iconJson, iconName, ns, autoFontFamily, injectFallbackFont, useDefaultXmlnsPrefix);
+                    var ctx = new IconfontContext(
+                        context, 
+                        file, 
+                        iconJson, 
+                        iconName, 
+                        ns, 
+                        autoSetFontFamily, 
+                        considerIIconVisual,
+                        injectFallbackFont, 
+                        useDefaultXmlnsPrefix);
                     ctxs.Add(ctx);
 
                     // UseDefaultXmlnsPrefix.
@@ -406,6 +422,18 @@ internal static class {ctx.FallbackFontInjectorName}
                 builder.AppendLine();
                 builder.AppendLine($"{Indent}public {markupName}({markupKeysName} key) => _key = key;");
                 builder.AppendLine();
+
+                var magicIconLogical = "";
+                if (ctx.ConsiderIIconVisualWhenAutoSetFontFamily)
+                {
+                    magicIconLogical = $@"
+            if (targetProvider?.TargetObject is global::Nlnet.Sharp.IMagicIconHost host)
+            {{
+                host.IconFamily = family;
+            }}
+            else ";
+                }
+                
                 builder.AppendLine($@"
     public string Prefix {{ get; set; }}
 
@@ -413,22 +441,23 @@ internal static class {ctx.FallbackFontInjectorName}
 
     public bool SpaceBetween {{ get; set; }} = true;
 
-    public bool AutoFontFamily {{ get; set; }} = {ctx.AutoFontFamily.ToString().ToLower()};
+    public bool AutoSetFontFamily {{ get; set; }} = {ctx.AutoSetFontFamily.ToString().ToLower()};
 
     private const string Space = ""\u00a0"";
 
     public override object ProvideValue(IServiceProvider serviceProvider)
     {{
-        if (AutoFontFamily)
+        if (AutoSetFontFamily)
         {{
             var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-            if (targetProvider?.TargetObject is Control control)
+            var family = SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}];
+            {magicIconLogical}if (targetProvider?.TargetObject is Control control)
             {{
-                TextElement.SetFontFamily(control, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
+                TextElement.SetFontFamily(control, family);
             }}
             else if (targetProvider?.TargetObject is TextElement element)
             {{
-                element.SetCurrentValue(TextElement.FontFamilyProperty, SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}]);
+                element.SetCurrentValue(TextElement.FontFamilyProperty, family);
             }}
         }}
 
