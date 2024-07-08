@@ -154,6 +154,8 @@ namespace Nlnet.Sharp
                     if (iconJson.font_family == null) throw new Exception("The 'font_family' of the json is empty.");
                     if (iconJson.glyphs == null) throw new Exception("The 'glyphs' of the json is empty.");
 
+                    DistinctGlyphs(iconJson);
+
                     // IconJson Context.
                     var ctx = new IconfontContext(
                         context, 
@@ -197,10 +199,27 @@ namespace Nlnet.Sharp
             }
         }
 
+        private static void DistinctGlyphs(IconJson iconJson)
+        {
+            var dic = new Dictionary<string, List<int>>();
+            foreach (var glyph in iconJson.glyphs)
+            {
+                if (dic.TryGetValue(glyph.name, out var list))
+                {
+                    glyph.name = $"{glyph.name}_{list.Count}";
+                    list.Add(0);
+                }
+                else
+                {
+                    dic[glyph.name] = new List<int>() { 0 };
+                }
+            }
+        }
+
         private static void BuildFontFamilyMarkup(GeneratorExecutionContext context, IList<IconfontContext> ctxs)
         {
-            var fontKeysName = $"SharpIconFamilyKeys";
-            var fontMarkupName = $"SharpIconFamilyExtension";
+            var fontKeysName = $"IconFamilyKeys";
+            var fontMarkupName = $"IconFamilyExtension";
             var ns = GetGlobalNamespace(context);
 
             Build(ctxs, context, fontKeysName, builder =>
@@ -450,7 +469,7 @@ internal static class {ctx.FallbackFontInjectorName}
         if (AutoSetFontFamily)
         {{
             var targetProvider = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-            var family = SharpIconFamilyExtension.Values[SharpIconFamilyKeys.{ctx.Name.AsName()}];
+            var family = IconFamilyExtension.Values[IconFamilyKeys.{ctx.Name.AsName()}];
             {magicIconLogical}if (targetProvider?.TargetObject is Control control)
             {{
                 TextElement.SetFontFamily(control, family);

@@ -17,11 +17,11 @@
 
 	<ItemGroup>
 		<!--InjectFallbackFont is recommanded to use for one font.-->
-		<AdditionalFiles Include="Assets\icon_a.json" IconName="IconA" IconNamespace="Nlnet.Sharp.IconA" />
-		<AdditionalFiles Include="Assets\icon_b.json" IconName="IconB" UseDefaultXmlnsPrefix="true" />
-		<AdditionalFiles Include="Assets\icon_c.json" IconName="IconC" IconNamespace="Nlnet.Sharp.IconC" UseDefaultXmlnsPrefix="true" InjectFallbackFont="true" />
-		<AdditionalFiles Include="Assets\icon_d.json" IconName="IconD" IconNamespace="Nlnet.Sharp.IconD" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" />
-		<AdditionalFiles Include="Assets\icon_e.json" IconName="IconE" IconNamespace="Nlnet.Sharp.IconE" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" ConsiderIIconVisualWhenAutoSetFontFamily="true" />
+		<AdditionalFiles Include="Assets\icon_a.json" IconName="Travel" IconNamespace="Nlnet.Sharp.Icon.Travel" />
+		<AdditionalFiles Include="Assets\icon_b.json" IconName="Tree" UseDefaultXmlnsPrefix="true" />
+		<AdditionalFiles Include="Assets\icon_c.json" IconName="Black" IconNamespace="Nlnet.Sharp.Icon.Black" UseDefaultXmlnsPrefix="true" InjectFallbackFont="true" />
+		<AdditionalFiles Include="Assets\icon_d.json" IconName="Food" IconNamespace="Nlnet.Sharp.Icon.Food" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" />
+		<AdditionalFiles Include="Assets\icon_e.json" IconName="Fruit" IconNamespace="Nlnet.Sharp.Icon.Fruit" UseDefaultXmlnsPrefix="true" AutoSetFontFamily="true" ConsiderIIconVisualWhenAutoSetFontFamily="true" />
 	</ItemGroup>
 
 	<ItemGroup>

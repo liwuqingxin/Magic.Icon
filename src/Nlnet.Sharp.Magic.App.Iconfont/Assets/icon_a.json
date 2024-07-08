@@ -1,177 +1,289 @@
 {
-  "id": "4489927",
-  "name": "Avalonia.DevTools.Color",
-  "font_family": "Devtools.Color",
+  "id": "4614036",
+  "name": "tmp-旅行",
+  "font_family": "travel",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
     {
-      "icon_id": "40957578",
-      "name": "Day",
-      "font_class": "Day",
-      "unicode": "e642",
-      "unicode_decimal": 58946
+      "icon_id": "1337291",
+      "name": "travel",
+      "font_class": "Suitcase",
+      "unicode": "e601",
+      "unicode_decimal": 58881
     },
     {
-      "icon_id": "40957579",
-      "name": "IsFocusable",
-      "font_class": "IsFocusable",
-      "unicode": "e643",
-      "unicode_decimal": 58947
+      "icon_id": "1337292",
+      "name": "Tent",
+      "font_class": "Tent",
+      "unicode": "e602",
+      "unicode_decimal": 58882
     },
     {
-      "icon_id": "40957580",
-      "name": "FolderOpen",
-      "font_class": "FolderOpen",
-      "unicode": "e644",
-      "unicode_decimal": 58948
+      "icon_id": "1337293",
+      "name": "Synagogue",
+      "font_class": "Synagogue",
+      "unicode": "e603",
+      "unicode_decimal": 58883
     },
     {
-      "icon_id": "40957581",
-      "name": "IsFocused",
-      "font_class": "IsFocused",
-      "unicode": "e645",
-      "unicode_decimal": 58949
+      "icon_id": "1337294",
+      "name": "Taj Mahal",
+      "font_class": "TajMahal",
+      "unicode": "e604",
+      "unicode_decimal": 58884
     },
     {
-      "icon_id": "40957582",
-      "name": "IsPinned",
-      "font_class": "IsPinned",
-      "unicode": "e646",
-      "unicode_decimal": 58950
+      "icon_id": "1337295",
+      "name": "Taxi",
+      "font_class": "Taxi",
+      "unicode": "e605",
+      "unicode_decimal": 58885
     },
     {
-      "icon_id": "40957583",
-      "name": "IsClipToBounds",
-      "font_class": "IsClipToBounds",
-      "unicode": "e647",
-      "unicode_decimal": 58951
+      "icon_id": "1337296",
+      "name": "Ticket",
+      "font_class": "Ticket",
+      "unicode": "e606",
+      "unicode_decimal": 58886
     },
     {
-      "icon_id": "40957584",
-      "name": "Hand",
-      "font_class": "Hand",
-      "unicode": "e648",
-      "unicode_decimal": 58952
+      "icon_id": "1337297",
+      "name": "Timezone",
+      "font_class": "Timezone",
+      "unicode": "e607",
+      "unicode_decimal": 58887
     },
     {
-      "icon_id": "40957585",
-      "name": "IsEnabled",
-      "font_class": "IsEnabled",
-      "unicode": "e649",
-      "unicode_decimal": 58953
+      "icon_id": "1337298",
+      "name": "Trailer",
+      "font_class": "Trailer",
+      "unicode": "e608",
+      "unicode_decimal": 58888
     },
     {
-      "icon_id": "40957586",
-      "name": "DayOrNight",
-      "font_class": "DayOrNight",
-      "unicode": "e64a",
-      "unicode_decimal": 58954
+      "icon_id": "1337299",
+      "name": "Tourist",
+      "font_class": "Tourist",
+      "unicode": "e609",
+      "unicode_decimal": 58889
     },
     {
-      "icon_id": "40957587",
-      "name": "CaseSensitive",
-      "font_class": "CaseSensitive",
-      "unicode": "e64b",
-      "unicode_decimal": 58955
+      "icon_id": "1337300",
+      "name": "Ticket Purchase",
+      "font_class": "TicketPurchase",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
     },
     {
-      "icon_id": "40957588",
-      "name": "IsFocusedWithIn",
-      "font_class": "IsFocusedWithIn",
-      "unicode": "e64c",
-      "unicode_decimal": 58956
+      "icon_id": "1337301",
+      "name": "Train",
+      "font_class": "Train",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
     },
     {
-      "icon_id": "40957589",
-      "name": "Regex",
-      "font_class": "Regex",
-      "unicode": "e64d",
-      "unicode_decimal": 58957
+      "icon_id": "1337302",
+      "name": "Tram",
+      "font_class": "Tram",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
     },
     {
-      "icon_id": "40957590",
-      "name": "IsStop",
-      "font_class": "IsStop",
-      "unicode": "e64e",
-      "unicode_decimal": 58958
+      "icon_id": "1337303",
+      "name": "Treasure Map",
+      "font_class": "TreasureMap",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
     },
     {
-      "icon_id": "40957591",
-      "name": "IsTabStop",
-      "font_class": "IsTabStop",
-      "unicode": "e64f",
-      "unicode_decimal": 58959
+      "icon_id": "1337304",
+      "name": "Transportation",
+      "font_class": "Transportation",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
     },
     {
-      "icon_id": "40957592",
-      "name": "Sink",
-      "font_class": "Sink",
-      "unicode": "e650",
-      "unicode_decimal": 58960
+      "icon_id": "1337305",
+      "name": "Trolleybus",
+      "font_class": "Trolleybus",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
     },
     {
-      "icon_id": "40957594",
-      "name": "Night",
-      "font_class": "Night",
-      "unicode": "e651",
-      "unicode_decimal": 58961
+      "icon_id": "1337306",
+      "name": "Vanpool",
+      "font_class": "Vanpool",
+      "unicode": "e610",
+      "unicode_decimal": 58896
     },
     {
-      "icon_id": "40957595",
-      "name": "WholeWord",
-      "font_class": "WholeWord",
-      "unicode": "e652",
-      "unicode_decimal": 58962
+      "icon_id": "1337307",
+      "name": "Waiting Room",
+      "font_class": "WaitingRoom",
+      "unicode": "e611",
+      "unicode_decimal": 58897
     },
     {
-      "icon_id": "40957596",
-      "name": "IsSelected",
-      "font_class": "IsSelected",
-      "unicode": "e653",
-      "unicode_decimal": 58963
+      "icon_id": "1337308",
+      "name": "Train Ticket",
+      "font_class": "TrainTicket",
+      "unicode": "e612",
+      "unicode_decimal": 58898
     },
     {
-      "icon_id": "40957597",
-      "name": "IsDropDownOpen",
-      "font_class": "IsDropDownOpen",
-      "unicode": "e654",
-      "unicode_decimal": 58964
+      "icon_id": "1337309",
+      "name": "US Capitol",
+      "font_class": "USCapitol",
+      "unicode": "e613",
+      "unicode_decimal": 58899
     },
     {
-      "icon_id": "40957598",
-      "name": "IsVisible",
-      "font_class": "IsVisible",
-      "unicode": "e655",
-      "unicode_decimal": 58965
+      "icon_id": "1337310",
+      "name": "Walking Bridge",
+      "font_class": "WalkingBridge",
+      "unicode": "e614",
+      "unicode_decimal": 58900
     },
     {
-      "icon_id": "40957599",
-      "name": "Node",
-      "font_class": "Node",
-      "unicode": "e656",
-      "unicode_decimal": 58966
+      "icon_id": "1337311",
+      "name": "Tricycle",
+      "font_class": "Tricycle",
+      "unicode": "e615",
+      "unicode_decimal": 58901
     },
     {
-      "icon_id": "40957600",
-      "name": "TriangleRuler",
-      "font_class": "TriangleRuler",
-      "unicode": "e657",
-      "unicode_decimal": 58967
+      "icon_id": "1337312",
+      "name": "Water Park",
+      "font_class": "WaterPark",
+      "unicode": "e616",
+      "unicode_decimal": 58902
     },
     {
-      "icon_id": "40957601",
-      "name": "IsOpen",
-      "font_class": "IsOpen",
-      "unicode": "e658",
-      "unicode_decimal": 58968
+      "icon_id": "1337313",
+      "name": "Water Bottle",
+      "font_class": "WaterBottle",
+      "unicode": "e617",
+      "unicode_decimal": 58903
     },
     {
-      "icon_id": "40957602",
-      "name": "Scop",
-      "font_class": "Scop",
-      "unicode": "e659",
-      "unicode_decimal": 58969
+      "icon_id": "1337314",
+      "name": "Water Transportation",
+      "font_class": "WaterTransportation",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1337315",
+      "name": "West Direction",
+      "font_class": "WestDirection",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "1337316",
+      "name": "Waterfall",
+      "font_class": "Waterfall",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "1337317",
+      "name": "West",
+      "font_class": "West",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "1337318",
+      "name": "Wind Rose",
+      "font_class": "WindRose",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "1337319",
+      "name": "World Map",
+      "font_class": "WorldMap",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1337320",
+      "name": "Waypoint Map",
+      "font_class": "WaypointMap",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "1337321",
+      "name": "Worldwide Location",
+      "font_class": "WorldwideLocation",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "1337322",
+      "name": "Wharf",
+      "font_class": "Wharf",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "1337323",
+      "name": "4 Star Hotel",
+      "font_class": "StarHotel",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "1337324",
+      "name": "5 Star Hotel",
+      "font_class": "StarHotel1",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1337325",
+      "name": "Airplane Landing",
+      "font_class": "AirplaneLanding",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "1337326",
+      "name": "Airport",
+      "font_class": "Airport",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "1337327",
+      "name": "3 Star Hotel",
+      "font_class": "StarHotel2",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "1337329",
+      "name": "Arena",
+      "font_class": "Arena",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "1337332",
+      "name": "Airplane Take Off",
+      "font_class": "AirplaneTakeOff",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "1337334",
+      "name": "Beach Ball",
+      "font_class": "BeachBall",
+      "unicode": "e628",
+      "unicode_decimal": 58920
     }
   ]
 }

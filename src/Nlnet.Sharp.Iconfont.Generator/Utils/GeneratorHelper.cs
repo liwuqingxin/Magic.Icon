@@ -6,7 +6,7 @@ namespace Nlnet.Sharp
 {
     internal static class GeneratorHelper
     {
-        private static char[] InvalidChars = new[]
+        private static readonly char[] InvalidChars = new[]
         {
             ' ', '-', '.', '?', '+', '=', '*', '/', '\\', '!', '@', 
             '#', '$', '%', '^', '&', ',', '~', '`', ';', ':',
@@ -16,6 +16,11 @@ namespace Nlnet.Sharp
 
         public static string AsName(this string name)
         {
+            if (string.IsNullOrEmpty(name))
+            {
+                return name;
+            }
+
             var chars = name.ToArray();
             for (var i = 0; i < chars.Length; i++)
             {
@@ -25,6 +30,11 @@ namespace Nlnet.Sharp
                 {
                     chars[i] = '_';
                 }
+            }
+
+            if (chars[0] >= '0' && chars[0] <= '9')
+            {
+                return $"_{new string(chars)}";
             }
 
             return new string(chars);

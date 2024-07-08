@@ -8,7 +8,8 @@
     </Application.Styles>
 
     <Application.Resources>
-        <FontFamily x:Key="IconAFamily">avares://Nlnet.Sharp.Magic.App.Iconfont/Assets/icon_a.ttf#Devtools.Color</FontFamily>
+        <!--This is not good because if you change the icon file's name or location, this goes wrong.-->
+        <FontFamily x:Key="IconAFamily">avares://Nlnet.Sharp.Magic.App.Iconfont/Assets/icon_a.ttf#travel</FontFamily>
     </Application.Resources>
 
 </Application>
