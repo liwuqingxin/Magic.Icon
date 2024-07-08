@@ -17,13 +17,13 @@ public partial class MainWindow : Window
         viewer.ShowDialog(this);
     }
 
-    private void ButtonOpenIconfontWebsite_OnClick(object? sender, RoutedEventArgs e)
+    private void ButtonVisitWebsite_OnClick(object? sender, RoutedEventArgs e)
     {
-        Process.Start(new ProcessStartInfo("https://www.iconfont.cn/") { UseShellExecute = true });
-    }
+        if (sender is not Button { Tag: string s })
+        {
+            return;
+        }
 
-    private void ButtonOpenProjectUrlWebsite_OnClick(object? sender, RoutedEventArgs e)
-    {
-        Process.Start(new ProcessStartInfo("https://github.com/liwuqingxin/Magic.Icon") { UseShellExecute = true });
+        Process.Start(new ProcessStartInfo(s) { UseShellExecute = true });
     }
 }

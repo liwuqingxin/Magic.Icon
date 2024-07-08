@@ -7,7 +7,7 @@
         xmlns:sharp="clr-namespace:Nlnet.Sharp"
         xmlns:travel="clr-namespace:Nlnet.Sharp.Icon.Travel;assembly=Nlnet.Sharp.Magic.App.Iconfont"
         Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
-        Width="800"
+        Width="830"
         Height="500"
         FontSize="18"
         Icon="Assets/Magic.ico"
@@ -83,6 +83,7 @@
                 <StackPanel Margin="0,20" />
             </ItemsPanelTemplate>
         </TabControl.ItemsPanel>
+
         <TabControl.ContentTemplate>
             <DataTemplate>
                 <ScrollViewer Content="{Binding}" />
@@ -91,14 +92,46 @@
 
         <TabItem Header="About">
             <StackPanel Spacing="20">
-                <Image Width="120"
-                       HorizontalAlignment="Left"
-                       Source="Assets/Magic.Clean.png" />
+                <Grid ColumnDefinitions="Auto,40,*,20,Auto">
+                    <Image Height="120"
+                           HorizontalAlignment="Left"
+                           Source="Assets/Magic.Clean.png" />
+
+                    <Border Grid.Column="1"
+                            Width="1"
+                            HorizontalAlignment="Center"
+                            Background="LightGray" />
+
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Margin="0,0,0,10"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Text="Promotion" />
+                        <TextBlock>
+                            <Run>We have created a</Run>
+                            <Run FontWeight="Bold" Foreground="MediumVioletRed">powerful devtools</Run>
+                            <Run>for Avalonia. A free trial plan is available now. Visit our</Run>
+                            <Button Classes="Link Website"
+                                    Click="ButtonVisitWebsite_OnClick"
+                                    Content="website"
+                                    Tag="https://www.devtools.nlnet.net/" />
+                            <Run>to learn more.</Run>
+                        </TextBlock>
+                    </StackPanel>
+                    <Image Grid.Column="4"
+                           Height="120"
+                           Margin="20,0"
+                           HorizontalAlignment="Left"
+                           Source="Assets/DevTools.png" />
+                </Grid>
+
+
                 <TextBlock TextWrapping="Wrap">
                     <Run>We provide an ability to generate icon classes from iconfont.json which comes from</Run>
                     <Button Classes="Link Website"
-                            Click="ButtonOpenIconfontWebsite_OnClick"
-                            Content="https://www.iconfont.cn/." />
+                            Click="ButtonVisitWebsite_OnClick"
+                            Content="https://www.iconfont.cn/"
+                            Tag="https://www.iconfont.cn/" />
                     <Run Text="Some other sites those have the ability to generate iconfont will be supported soon if you file an issue." />
                     <LineBreak />
                     <LineBreak />
@@ -112,11 +145,13 @@
                     <Run BaselineAlignment="Center">If you like it, please give a star to us on</Run>
                     <Button VerticalAlignment="Center"
                             Classes="Link Icon"
-                            Click="ButtonOpenProjectUrlWebsite_OnClick"
+                            Click="ButtonVisitWebsite_OnClick"
                             Content="{Black GitHub}"
-                            FontSize="28" />
+                            FontSize="28"
+                            Tag="https://github.com/liwuqingxin/Magic.Icon" />
                     <Run BaselineAlignment="Center" Text=". Thank you for that!" />
                 </TextBlock>
+
             </StackPanel>
         </TabItem>
 
@@ -246,47 +281,47 @@
                     <Run Text="You can use the FontManagerOptions to control the text's FontFamily." />
                     <Run Text="The last line is clipped. It is not recommended to use it." />
                 </TextBlock>
-				<TextBlock Text="{Food 彩椒, Prefix='The icon is', Suffix='and it is also named 彩椒.'}" />
-				<TextBlock Text="{Food 咖啡, Suffix='This is Coffee (咖啡).'}" />
-				<TextBlock Text="{Food 布丁, Suffix='This is Pudding (布丁).'}" />
-				<TextBlock Text="{Food 树莓, Suffix='This is Raspberry (树莓).'}" />
+                <TextBlock Text="{Food 彩椒, Prefix='The icon is', Suffix='and it is also named 彩椒.'}" />
+                <TextBlock Text="{Food 咖啡, Suffix='This is Coffee (咖啡).'}" />
+                <TextBlock Text="{Food 布丁, Suffix='This is Pudding (布丁).'}" />
+                <TextBlock Text="{Food 树莓, Suffix='This is Raspberry (树莓).'}" />
 
                 <TextBlock Text="Use Run to combine icons and texts. In this way, FontFamily of icons and texts does not interact each other." />
                 <Border BorderBrush="Red" BorderThickness="1">
-					<TextBlock>
+                    <TextBlock>
                         <Run FontSize="24" Text="{Food 奥利奥}" />
-						<Run Text="This is Oreo (奥利奥)." />
-						<Run FontSize="48" Text="{Food 树莓}" />
-						<Run Text="This is Raspberry (树莓)." />
-					</TextBlock>
+                        <Run Text="This is Oreo (奥利奥)." />
+                        <Run FontSize="48" Text="{Food 树莓}" />
+                        <Run Text="This is Raspberry (树莓)." />
+                    </TextBlock>
                 </Border>
 
                 <TextBlock Text="Also we can have more controls on them, like 'BaselineAlignment'." />
                 <Border BorderBrush="Red" BorderThickness="1">
-					<TextBlock>
+                    <TextBlock>
                         <Run BaselineAlignment="Center"
                              FontSize="24"
                              Text="{Food 奥利奥}" />
-						<Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
-						<Run BaselineAlignment="Baseline"
+                        <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
+                        <Run BaselineAlignment="Baseline"
                              FontSize="48"
                              Text="{Food 树莓}" />
-						<Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
-					</TextBlock>
+                        <Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
+                    </TextBlock>
                 </Border>
                 <Border BorderBrush="Red" BorderThickness="1">
-					<TextBlock>
-						<Run BaselineAlignment="Center" Text="{Food 奥利奥}" />
-						<Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
-						<Run BaselineAlignment="Baseline" Text="{Food 树莓}" />
-						<Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
-					</TextBlock>
-				</Border>
-				<Border BorderBrush="Red" BorderThickness="1">
-					<TextBlock FontSize="12">
+                    <TextBlock>
+                        <Run BaselineAlignment="Center" Text="{Food 奥利奥}" />
+                        <Run BaselineAlignment="Center" Text="This is Oreo (奥利奥)." />
+                        <Run BaselineAlignment="Baseline" Text="{Food 树莓}" />
+                        <Run BaselineAlignment="Center" Text="This is Raspberry (树莓)." />
+                    </TextBlock>
+                </Border>
+                <Border BorderBrush="Red" BorderThickness="1">
+                    <TextBlock FontSize="12">
                         <Run Text="{Food 橙子}" />
                         <Run Text="This is Raspberry (树莓)." />
-					</TextBlock>
+                    </TextBlock>
                 </Border>
 
                 <TextBlock Text="If you use Nlnet.Sharp.Magic.Icon package in nuget, you can use 'IconTextBlock' which has a Icon property." />
