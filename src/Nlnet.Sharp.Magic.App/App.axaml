@@ -8,8 +8,14 @@
     </Application.Styles>
 
     <Application.Resources>
-        <!--This is not good because if you change the icon file's name or location, this goes wrong.-->
-        <FontFamily x:Key="IconAFamily">avares://Nlnet.Sharp.Magic.App.Iconfont/Assets/icon_a.ttf#travel</FontFamily>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Nlnet.Avalonia.Senior/Assets/Themes.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!--This is not good because if you change the icon file's name or location, this goes wrong.-->
+            <FontFamily x:Key="IconAFamily">avares://Nlnet.Sharp.Magic.App.Iconfont/Assets/icon_a.ttf#travel</FontFamily>
+        </ResourceDictionary>
     </Application.Resources>
 
 </Application>

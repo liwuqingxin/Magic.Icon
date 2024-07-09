@@ -1,6 +1,7 @@
 <Window x:Class="Nlnet.Sharp.MainWindow"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="https://www.nlnet.com/avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nlnet="https://www.nlnet.net"
@@ -8,11 +9,17 @@
         xmlns:travel="clr-namespace:Nlnet.Sharp.Icon.Travel;assembly=Nlnet.Sharp.Magic.App.Iconfont"
         Title="{Binding Source={x:Static sharp:AssemblyVersionProvider.Version}, StringFormat=Nlnet Sharp Iconfont Generator | v{0}}"
         Width="830"
-        Height="500"
+        Height="510"
         FontSize="18"
         Icon="Assets/Magic.ico"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="Accent" Color="#FFC75F" />
+        <SolidColorBrush x:Key="Primary" Color="#0065A3" />
+        <SolidColorBrush x:Key="Secondary" Color="#845EC2" />
+    </Window.Resources>
 
     <Window.Styles>
         <Style Selector="TextBlock">
@@ -67,15 +74,14 @@
                 <Setter Property="Background" Value="#104A8ACE" />
             </Style>
             <Style Selector="^:selected /template/ Panel">
-                <Setter Property="TextElement.Foreground" Value="#4A8ACE" />
+                <Setter Property="TextElement.Foreground" Value="{StaticResource Primary}" />
                 <Setter Property="Background" Value="#254A8ACE" />
+            </Style>
+            <Style Selector="^:selected /template/ Border#PART_SelectedPipe">
+                <Setter Property="Background" Value="{StaticResource Primary}" />
             </Style>
         </Style>
     </Window.Styles>
-
-    <Window.Resources>
-        <SolidColorBrush x:Key="Accent" Color="#FDCB4F" />
-    </Window.Resources>
 
     <TabControl Padding="30" TabStripPlacement="Left">
         <TabControl.ItemsPanel>
@@ -86,16 +92,22 @@
 
         <TabControl.ContentTemplate>
             <DataTemplate>
-                <ScrollViewer Content="{Binding}" />
+                <controls:NtScrollViewer ClipToBounds="False" Content="{Binding}">
+                    <ScrollViewer.Styles>
+                        <Style Selector="controls|NtScrollContentPresenter">
+                            <Setter Property="ClipToBounds" Value="False" />
+                        </Style>
+                    </ScrollViewer.Styles>
+                </controls:NtScrollViewer>
             </DataTemplate>
         </TabControl.ContentTemplate>
 
         <TabItem Header="About">
             <StackPanel Spacing="20">
-                <Grid ColumnDefinitions="Auto,40,*,20,Auto">
+                <Grid ColumnDefinitions="Auto,40,*,0,Auto">
                     <Image Height="120"
                            HorizontalAlignment="Left"
-                           Source="Assets/Magic.Clean.png" />
+                           Source="Assets/Magic.png" />
 
                     <Border Grid.Column="1"
                             Width="1"
@@ -109,7 +121,7 @@
                                    Text="Promotion" />
                         <TextBlock>
                             <Run>We have created a</Run>
-                            <Run FontWeight="Bold" Foreground="MediumVioletRed">powerful devtools</Run>
+                            <Run FontWeight="Bold" Foreground="{DynamicResource Secondary}">powerful devtools</Run>
                             <Run>for Avalonia. A free trial plan is available now. Visit our</Run>
                             <Button Classes="Link Website"
                                     Click="ButtonVisitWebsite_OnClick"
@@ -150,6 +162,16 @@
                             FontSize="28"
                             Tag="https://github.com/liwuqingxin/Magic.Icon" />
                     <Run BaselineAlignment="Center" Text=". Thank you for that!" />
+                </TextBlock>
+
+                <Border Height="1" Background="LightGray" />
+
+                <TextBlock>
+                    <Run>About smooth scrolling we used, please see</Run>
+                    <Button Classes="Link Website"
+                            Click="ButtonVisitWebsite_OnClick"
+                            Content="Nlnet.Avalonia.Senior"
+                            Tag="https://docs.avalonia.css.nlnet.net/documentation/zhu-ti-bang-zhu/ru-he-shi-yong-senior" />.
                 </TextBlock>
 
             </StackPanel>
