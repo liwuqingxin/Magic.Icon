@@ -11,17 +11,9 @@ You can use it in avalonia (and wpf in future), in kinds of ways, just like this
 
 ## Promotion
 
-![img](img/DevTools.png)
+![img](img/Brand.svg)
 
 We have created a powerful DevTools for Avalonia. A free trial plan is available now. Visit our [website](https://www.devtools.nlnet.net) to learn more about it.
-
-![img](img/layout.gif)
-
-![img](img/tree.gif)
-
-![img](img/preview.gif)
-
-![img](img/property.gif)
 
 ## Using
 
