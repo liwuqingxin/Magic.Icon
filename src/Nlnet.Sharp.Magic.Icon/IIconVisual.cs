@@ -2,7 +2,7 @@
 
 namespace Nlnet.Sharp
 {
-    public interface IMagicIconHost
+    public interface IIconVisual
     {
         public string? Icon { get; set; }
 

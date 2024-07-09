@@ -446,7 +446,7 @@ internal static class {ctx.FallbackFontInjectorName}
                 if (ctx.ConsiderIIconVisualWhenAutoSetFontFamily)
                 {
                     magicIconLogical = $@"
-            if (targetProvider?.TargetObject is global::Nlnet.Sharp.IMagicIconHost host)
+            if (targetProvider?.TargetObject is global::Nlnet.Sharp.IIconVisual host)
             {{
                 host.IconFamily = family;
             }}

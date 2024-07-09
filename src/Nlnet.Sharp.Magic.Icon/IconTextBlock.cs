@@ -5,7 +5,7 @@ using Avalonia.Controls;
 
 namespace Nlnet.Sharp
 {
-    public class IconTextBlock : TextBlock, IMagicIconHost
+    public class IconTextBlock : TextBlock, IIconVisual
     {
         public string? Icon
         {
