@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<Import Project="$(MSBuildThisFileDirectory)..\Build\Common.props" />
-	<Import Project="$(MSBuildThisFileDirectory)\..\Build\Nuget.props" />
+<!--	<Import Project="$(MSBuildThisFileDirectory)\..\Build\Nuget.props" />-->
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
